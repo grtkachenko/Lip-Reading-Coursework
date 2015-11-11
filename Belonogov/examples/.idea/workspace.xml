@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" assignedExecutableTargets="true" buildAllGenerated="true">
+    <generated>
+      <config projectName="examples" targetName="bayes_net_gui_ex" />
+      <config projectName="examples" targetName="image_ex" />
+      <config projectName="examples" targetName="timer_ex" />
+      <config projectName="examples" targetName="svm_c_ex" />
+      <config projectName="examples" targetName="fhog_ex" />
+      <config projectName="examples" targetName="graph_labeling_ex" />
+      <config projectName="examples" targetName="iosockstream_ex" />
+      <config projectName="examples" targetName="svm_struct_ex" />
+      <config projectName="examples" targetName="max_cost_assignment_ex" />
+      <config projectName="examples" targetName="custom_trainer_ex" />
+      <config projectName="examples" targetName="file_to_code_ex" />
+      <config projectName="examples" targetName="least_squares_ex" />
+      <config projectName="examples" targetName="svm_rank_ex" />
+      <config projectName="examples" targetName="svm_sparse_ex" />
+      <config projectName="examples" targetName="matrix_expressions_ex" />
+      <config projectName="examples" targetName="bsp_ex" />
+      <config projectName="examples" targetName="queue_ex" />
+      <config projectName="examples" targetName="bayes_net_from_disk_ex" />
+      <config projectName="examples" targetName="dlib" />
+      <config projectName="examples" targetName="gui_api_ex" />
+      <config projectName="examples" targetName="std_allocator_ex" />
+      <config projectName="examples" targetName="krls_filter_ex" />
+      <config projectName="examples" targetName="multithreaded_object_ex" />
+      <config projectName="examples" targetName="svm_pegasos_ex" />
+      <config projectName="examples" targetName="multiclass_classification_ex" />
+      <config projectName="examples" targetName="surf_ex" />
+      <config projectName="examples" targetName="svr_ex" />
+      <config projectName="examples" targetName="3d_point_cloud_ex" />
+      <config projectName="examples" targetName="rank_features_ex" />
+      <config projectName="examples" targetName="object_detector_ex" />
+      <config projectName="examples" targetName="running_stats_ex" />
+      <config projectName="examples" targetName="krr_regression_ex" />
+      <config projectName="examples" targetName="logger_ex" />
+      <config projectName="examples" targetName="krr_classification_ex" />
+      <config projectName="examples" targetName="sequence_labeler_ex" />
+      <config projectName="examples" targetName="train_shape_predictor_ex" />
+      <config projectName="examples" targetName="bayes_net_ex" />
+      <config projectName="examples" targetName="sockstreambuf_ex" />
+      <config projectName="examples" targetName="server_iostream_ex" />
+      <config projectName="examples" targetName="thread_function_ex" />
+      <config projectName="examples" targetName="rvm_ex" />
+      <config projectName="examples" targetName="optimization_ex" />
+      <config projectName="examples" targetName="sequence_segmenter_ex" />
+      <config projectName="examples" targetName="member_function_pointer_ex" />
+      <config projectName="examples" targetName="model_selection_ex" />
+      <config projectName="examples" targetName="video_tracking_ex" />
+      <config projectName="examples" targetName="train_object_detector" />
+      <config projectName="examples" targetName="linear_manifold_regularizer_ex" />
+      <config projectName="examples" targetName="svm_ex" />
+      <config projectName="examples" targetName="logger_ex_2" />
+      <config projectName="examples" targetName="thread_pool_ex" />
+      <config projectName="examples" targetName="learning_to_track_ex" />
+      <config projectName="examples" targetName="config_reader_ex" />
+      <config projectName="examples" targetName="pipe_ex_2" />
+      <config projectName="examples" targetName="compress_stream_ex" />
+      <config projectName="examples" targetName="one_class_classifiers_ex" />
+      <config projectName="examples" targetName="pipe_ex" />
+      <config projectName="examples" targetName="threads_ex" />
+      <config projectName="examples" targetName="hough_transform_ex" />
+      <config projectName="examples" targetName="xml_parser_ex" />
+      <config projectName="examples" targetName="object_detector_advanced_ex" />
+      <config projectName="examples" targetName="mpc_ex" />
+      <config projectName="examples" targetName="kkmeans_ex" />
+      <config projectName="examples" targetName="assignment_learning_ex" />
+      <config projectName="examples" targetName="matrix_ex" />
+      <config projectName="examples" targetName="empirical_kernel_map_ex" />
+      <config projectName="examples" targetName="server_http_ex" />
+      <config projectName="examples" targetName="webcam_face_pose_ex" />
+      <config projectName="examples" targetName="threaded_object_ex" />
+      <config projectName="examples" targetName="fhog_object_detector_ex" />
+      <config projectName="examples" targetName="sockets_ex" />
+      <config projectName="examples" targetName="face_detection_ex" />
+      <config projectName="examples" targetName="webcam_belonogov" />
+      <config projectName="examples" targetName="quantum_computing_ex" />
+      <config projectName="examples" targetName="using_custom_kernels_ex" />
+      <config projectName="examples" targetName="face_landmark_detection_ex" />
+      <config projectName="examples" targetName="kcentroid_ex" />
+      <config projectName="examples" targetName="logger_custom_output_ex" />
+      <config projectName="examples" targetName="bridge_ex" />
+      <config projectName="examples" targetName="integrate_function_adapt_simp_ex" />
+      <config projectName="examples" targetName="krls_ex" />
+      <config projectName="examples" targetName="dir_nav_ex" />
+      <config projectName="examples" targetName="mlp_ex" />
+      <config projectName="examples" targetName="parallel_for_ex" />
+      <config projectName="examples" targetName="rvm_regression_ex" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="false" GENERATION_PASS_SYSTEM_ENVIRONMENT="true">
+    <ADDITIONAL_GENERATION_ENVIRONMENT>
+      <envs />
+    </ADDITIONAL_GENERATION_ENVIRONMENT>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b2ea0d5b-b7ba-4ab7-bce2-52ddcad80703" name="Default" comment="" />
+    <ignored path="examples.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="examples" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="webcam_belonogov.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webcam_belonogov.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4805492">
+              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="24" />
+    <option name="width" value="1366" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="examples" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="examples" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="examples" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="examples" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="examples" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="examples" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Application.webcam_belonogov">
+    <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="webcam_belonogov" CONFIG_NAME="Debug" TEST_MODE="SUITE_TEST">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="3d_point_cloud_ex" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="3d_point_cloud_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="3d_point_cloud_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="3d_point_cloud_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="assignment_learning_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="assignment_learning_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="assignment_learning_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="bayes_net_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="bayes_net_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="bayes_net_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="bayes_net_from_disk_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="bayes_net_from_disk_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="bayes_net_from_disk_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="bayes_net_gui_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="bayes_net_gui_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="bayes_net_gui_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="bridge_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="bridge_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="bridge_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="bsp_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="bsp_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="bsp_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="compress_stream_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="compress_stream_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="compress_stream_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="config_reader_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="config_reader_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="config_reader_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="custom_trainer_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="custom_trainer_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="custom_trainer_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="dir_nav_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="dir_nav_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="dir_nav_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="empirical_kernel_map_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="empirical_kernel_map_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="empirical_kernel_map_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="face_detection_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="face_detection_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="face_detection_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="face_landmark_detection_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="face_landmark_detection_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="face_landmark_detection_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="fhog_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="fhog_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="fhog_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="fhog_object_detector_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="fhog_object_detector_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="fhog_object_detector_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="file_to_code_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="file_to_code_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="file_to_code_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="graph_labeling_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="graph_labeling_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="graph_labeling_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="gui_api_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="gui_api_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="gui_api_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="hough_transform_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="hough_transform_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="hough_transform_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="image_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="image_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="image_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="integrate_function_adapt_simp_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="integrate_function_adapt_simp_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="integrate_function_adapt_simp_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="iosockstream_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="iosockstream_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="iosockstream_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="kcentroid_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="kcentroid_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="kcentroid_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="kkmeans_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="kkmeans_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="kkmeans_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="krls_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="krls_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="krls_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="krls_filter_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="krls_filter_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="krls_filter_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="krr_classification_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="krr_classification_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="krr_classification_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="krr_regression_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="krr_regression_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="krr_regression_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="learning_to_track_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="learning_to_track_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="learning_to_track_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="least_squares_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="least_squares_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="least_squares_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="linear_manifold_regularizer_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="linear_manifold_regularizer_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="linear_manifold_regularizer_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="logger_custom_output_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="logger_custom_output_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="logger_custom_output_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="logger_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="logger_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="logger_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="logger_ex_2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="logger_ex_2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="logger_ex_2">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="matrix_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="matrix_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="matrix_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="matrix_expressions_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="matrix_expressions_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="matrix_expressions_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="max_cost_assignment_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="max_cost_assignment_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="max_cost_assignment_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="member_function_pointer_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="member_function_pointer_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="member_function_pointer_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="mlp_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="mlp_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="mlp_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="model_selection_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="model_selection_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="model_selection_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="mpc_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="mpc_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="mpc_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="multiclass_classification_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="multiclass_classification_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="multiclass_classification_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="multithreaded_object_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="multithreaded_object_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="multithreaded_object_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="object_detector_advanced_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="object_detector_advanced_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="object_detector_advanced_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="object_detector_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="object_detector_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="object_detector_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="one_class_classifiers_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="one_class_classifiers_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="one_class_classifiers_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="optimization_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="optimization_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="optimization_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="parallel_for_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="parallel_for_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="parallel_for_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="pipe_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="pipe_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="pipe_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="pipe_ex_2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="pipe_ex_2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="pipe_ex_2">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="quantum_computing_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="quantum_computing_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="quantum_computing_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="queue_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="queue_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="queue_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="rank_features_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="rank_features_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="rank_features_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="running_stats_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="running_stats_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="running_stats_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="rvm_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="rvm_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="rvm_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="rvm_regression_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="rvm_regression_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="rvm_regression_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="sequence_labeler_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="sequence_labeler_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="sequence_labeler_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="sequence_segmenter_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="sequence_segmenter_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="sequence_segmenter_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="server_http_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="server_http_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="server_http_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="server_iostream_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="server_iostream_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="server_iostream_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="sockets_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="sockets_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="sockets_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="sockstreambuf_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="sockstreambuf_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="sockstreambuf_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="std_allocator_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="std_allocator_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="std_allocator_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="surf_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="surf_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="surf_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="svm_c_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="svm_c_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="svm_c_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="svm_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="svm_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="svm_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="svm_pegasos_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="svm_pegasos_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="svm_pegasos_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="svm_rank_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="svm_rank_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="svm_rank_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="svm_sparse_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="svm_sparse_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="svm_sparse_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="svm_struct_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="svm_struct_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="svm_struct_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="svr_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="svr_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="svr_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="thread_function_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="thread_function_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="thread_function_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="thread_pool_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="thread_pool_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="thread_pool_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="threaded_object_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="threaded_object_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="threaded_object_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="threads_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="threads_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="threads_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="timer_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="timer_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="timer_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="train_object_detector" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="train_object_detector" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="train_object_detector">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="train_shape_predictor_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="train_shape_predictor_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="train_shape_predictor_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="using_custom_kernels_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="using_custom_kernels_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="using_custom_kernels_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="video_tracking_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="video_tracking_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="video_tracking_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="webcam_face_pose_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="webcam_face_pose_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="webcam_face_pose_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="xml_parser_ex" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="xml_parser_ex" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="xml_parser_ex">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="dlib" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="dlib" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="webcam_belonogov" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="examples" TARGET_NAME="webcam_belonogov" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="examples" RUN_TARGET_NAME="webcam_belonogov">
+      <envs />
+      <method />
+    </configuration>
+    <list size="86">
+      <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
+      <item index="1" class="java.lang.String" itemvalue="Application.3d_point_cloud_ex" />
+      <item index="2" class="java.lang.String" itemvalue="Application.assignment_learning_ex" />
+      <item index="3" class="java.lang.String" itemvalue="Application.bayes_net_ex" />
+      <item index="4" class="java.lang.String" itemvalue="Application.bayes_net_from_disk_ex" />
+      <item index="5" class="java.lang.String" itemvalue="Application.bayes_net_gui_ex" />
+      <item index="6" class="java.lang.String" itemvalue="Application.bridge_ex" />
+      <item index="7" class="java.lang.String" itemvalue="Application.bsp_ex" />
+      <item index="8" class="java.lang.String" itemvalue="Application.compress_stream_ex" />
+      <item index="9" class="java.lang.String" itemvalue="Application.config_reader_ex" />
+      <item index="10" class="java.lang.String" itemvalue="Application.custom_trainer_ex" />
+      <item index="11" class="java.lang.String" itemvalue="Application.dir_nav_ex" />
+      <item index="12" class="java.lang.String" itemvalue="Application.empirical_kernel_map_ex" />
+      <item index="13" class="java.lang.String" itemvalue="Application.face_detection_ex" />
+      <item index="14" class="java.lang.String" itemvalue="Application.face_landmark_detection_ex" />
+      <item index="15" class="java.lang.String" itemvalue="Application.fhog_ex" />
+      <item index="16" class="java.lang.String" itemvalue="Application.fhog_object_detector_ex" />
+      <item index="17" class="java.lang.String" itemvalue="Application.file_to_code_ex" />
+      <item index="18" class="java.lang.String" itemvalue="Application.graph_labeling_ex" />
+      <item index="19" class="java.lang.String" itemvalue="Application.gui_api_ex" />
+      <item index="20" class="java.lang.String" itemvalue="Application.hough_transform_ex" />
+      <item index="21" class="java.lang.String" itemvalue="Application.image_ex" />
+      <item index="22" class="java.lang.String" itemvalue="Application.integrate_function_adapt_simp_ex" />
+      <item index="23" class="java.lang.String" itemvalue="Application.iosockstream_ex" />
+      <item index="24" class="java.lang.String" itemvalue="Application.kcentroid_ex" />
+      <item index="25" class="java.lang.String" itemvalue="Application.kkmeans_ex" />
+      <item index="26" class="java.lang.String" itemvalue="Application.krls_ex" />
+      <item index="27" class="java.lang.String" itemvalue="Application.krls_filter_ex" />
+      <item index="28" class="java.lang.String" itemvalue="Application.krr_classification_ex" />
+      <item index="29" class="java.lang.String" itemvalue="Application.krr_regression_ex" />
+      <item index="30" class="java.lang.String" itemvalue="Application.learning_to_track_ex" />
+      <item index="31" class="java.lang.String" itemvalue="Application.least_squares_ex" />
+      <item index="32" class="java.lang.String" itemvalue="Application.linear_manifold_regularizer_ex" />
+      <item index="33" class="java.lang.String" itemvalue="Application.logger_custom_output_ex" />
+      <item index="34" class="java.lang.String" itemvalue="Application.logger_ex" />
+      <item index="35" class="java.lang.String" itemvalue="Application.logger_ex_2" />
+      <item index="36" class="java.lang.String" itemvalue="Application.matrix_ex" />
+      <item index="37" class="java.lang.String" itemvalue="Application.matrix_expressions_ex" />
+      <item index="38" class="java.lang.String" itemvalue="Application.max_cost_assignment_ex" />
+      <item index="39" class="java.lang.String" itemvalue="Application.member_function_pointer_ex" />
+      <item index="40" class="java.lang.String" itemvalue="Application.mlp_ex" />
+      <item index="41" class="java.lang.String" itemvalue="Application.model_selection_ex" />
+      <item index="42" class="java.lang.String" itemvalue="Application.mpc_ex" />
+      <item index="43" class="java.lang.String" itemvalue="Application.multiclass_classification_ex" />
+      <item index="44" class="java.lang.String" itemvalue="Application.multithreaded_object_ex" />
+      <item index="45" class="java.lang.String" itemvalue="Application.object_detector_advanced_ex" />
+      <item index="46" class="java.lang.String" itemvalue="Application.object_detector_ex" />
+      <item index="47" class="java.lang.String" itemvalue="Application.one_class_classifiers_ex" />
+      <item index="48" class="java.lang.String" itemvalue="Application.optimization_ex" />
+      <item index="49" class="java.lang.String" itemvalue="Application.parallel_for_ex" />
+      <item index="50" class="java.lang.String" itemvalue="Application.pipe_ex" />
+      <item index="51" class="java.lang.String" itemvalue="Application.pipe_ex_2" />
+      <item index="52" class="java.lang.String" itemvalue="Application.quantum_computing_ex" />
+      <item index="53" class="java.lang.String" itemvalue="Application.queue_ex" />
+      <item index="54" class="java.lang.String" itemvalue="Application.rank_features_ex" />
+      <item index="55" class="java.lang.String" itemvalue="Application.running_stats_ex" />
+      <item index="56" class="java.lang.String" itemvalue="Application.rvm_ex" />
+      <item index="57" class="java.lang.String" itemvalue="Application.rvm_regression_ex" />
+      <item index="58" class="java.lang.String" itemvalue="Application.sequence_labeler_ex" />
+      <item index="59" class="java.lang.String" itemvalue="Application.sequence_segmenter_ex" />
+      <item index="60" class="java.lang.String" itemvalue="Application.server_http_ex" />
+      <item index="61" class="java.lang.String" itemvalue="Application.server_iostream_ex" />
+      <item index="62" class="java.lang.String" itemvalue="Application.sockets_ex" />
+      <item index="63" class="java.lang.String" itemvalue="Application.sockstreambuf_ex" />
+      <item index="64" class="java.lang.String" itemvalue="Application.std_allocator_ex" />
+      <item index="65" class="java.lang.String" itemvalue="Application.surf_ex" />
+      <item index="66" class="java.lang.String" itemvalue="Application.svm_c_ex" />
+      <item index="67" class="java.lang.String" itemvalue="Application.svm_ex" />
+      <item index="68" class="java.lang.String" itemvalue="Application.svm_pegasos_ex" />
+      <item index="69" class="java.lang.String" itemvalue="Application.svm_rank_ex" />
+      <item index="70" class="java.lang.String" itemvalue="Application.svm_sparse_ex" />
+      <item index="71" class="java.lang.String" itemvalue="Application.svm_struct_ex" />
+      <item index="72" class="java.lang.String" itemvalue="Application.svr_ex" />
+      <item index="73" class="java.lang.String" itemvalue="Application.thread_function_ex" />
+      <item index="74" class="java.lang.String" itemvalue="Application.thread_pool_ex" />
+      <item index="75" class="java.lang.String" itemvalue="Application.threaded_object_ex" />
+      <item index="76" class="java.lang.String" itemvalue="Application.threads_ex" />
+      <item index="77" class="java.lang.String" itemvalue="Application.timer_ex" />
+      <item index="78" class="java.lang.String" itemvalue="Application.train_object_detector" />
+      <item index="79" class="java.lang.String" itemvalue="Application.train_shape_predictor_ex" />
+      <item index="80" class="java.lang.String" itemvalue="Application.using_custom_kernels_ex" />
+      <item index="81" class="java.lang.String" itemvalue="Application.video_tracking_ex" />
+      <item index="82" class="java.lang.String" itemvalue="Application.webcam_face_pose_ex" />
+      <item index="83" class="java.lang.String" itemvalue="Application.xml_parser_ex" />
+      <item index="84" class="java.lang.String" itemvalue="Application.dlib" />
+      <item index="85" class="java.lang.String" itemvalue="Application.webcam_belonogov" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2ea0d5b-b7ba-4ab7-bce2-52ddcad80703" name="Default" comment="" />
+      <created>1447274580763</created>
+      <option name="number" value="Default" />
+      <updated>1447274580763</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998565" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998565" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32998565" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webcam_belonogov.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4805492">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

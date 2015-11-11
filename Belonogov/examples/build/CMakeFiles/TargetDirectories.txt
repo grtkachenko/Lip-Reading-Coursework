@@ -1,0 +1,3 @@
+/home/vanya/Documents/LR/3/Lip-Reading-Coursework/Belonogov/examples/build/CMakeFiles/webcam_belonogov.dir
+/home/vanya/Documents/LR/3/Lip-Reading-Coursework/Belonogov/examples/build/CMakeFiles/webcam_face_pose_ex.dir
+/home/vanya/Documents/LR/3/Lip-Reading-Coursework/Belonogov/examples/build/dlib_build/CMakeFiles/dlib.dir
