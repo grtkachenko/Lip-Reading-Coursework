@@ -1,0 +1,157 @@
+#!/bin/zsh
+
+# just for beautiful interface
+for ((i = 0; i < 3; i++))
+do
+    echo
+done
+
+# if our command for running is not recognized,
+# let's help out user with some manual
+if [[ $1 != "delete" && $1 != "build" ]]
+then
+    echo "Type <./run delete> to delete executables." # help for deleting executables (e.g. need for commiting)
+    echo "Type <./run build> to build executables" # help for build
+
+    # just for beautiful interface
+    for ((i = 0; i < 3; i++))
+    do
+        echo
+    done
+
+    exit # finish our script here
+fi
+
+# if we need to delete executables
+if [[ $1 == "delete" ]]
+then
+    # if we have executables folder, then delete it
+    if ! [[ -d executables ]]
+    then
+        echo "Executables have already been deleted." # information output
+    else
+        rm -r executables # if we have, then delete
+        echo "Executables have been successfully deleted." # information output
+    fi
+
+    # just for beautiful interface
+    for ((i = 0; i < 3; i++))
+    do
+        echo
+    done
+
+    exit # finish our script here
+fi
+
+# if we have executables folder, then let's see what user wants from this script
+if [[ -d executables ]]
+then
+    echo "Executables have already been built." # information output
+    echo -n "Would you like to do cmake from the beginning? {Yes by default} [Y/N]: " # prompt for used
+    read x # read user's feedback
+
+    if [[ $x == "Y" || $x == "" ]] # if user wants to do cmake from the beginning
+    then
+        rm -r executables # delete executables for beginning
+    else
+        if [[ $x == "N" ]] # if user doesn't want to build from the beginning
+        then
+            cd src # go to source files folder
+            ls -A > list # copy list of all source files to file
+
+            # copy all source files from src to helpers for cmake
+            while read file
+            do
+                # if our file is list, then it's not our source file
+                if [[ $file == "list" ]]
+                then
+                    continue
+                fi
+
+                cp $file ../helpers
+            done < list
+
+            cd .. # go back to main folder
+            cd executables # go to executables folder
+            cmake --build . # rebuild all dependencies
+            cd ../src # go back to src folder
+
+            # remove all source files copied before cmake from helpers folder
+            while read file
+            do
+                # if our file is list, then it's not our source file
+                if [[ $file == "list" ]]
+                then
+                    continue
+                fi
+
+                rm ../helpers/$file
+            done < list
+
+            rm list # remove file with a list of source files
+            cd .. # go back to main folder
+
+            # just for beautiful interface
+            for ((i = 0; i < 3; i++))
+            do
+                echo
+            done
+
+            exit # finish our script here
+        else
+            echo "Option not recognized. Execution failed" # command not recognizer, information output
+
+            # just for beautiful interface
+            for ((i = 0; i < 3; i++))
+            do
+                echo
+            done
+
+            exit # finish our script here
+        fi
+    fi
+fi
+
+cd src # go to source files folder
+ls -A > list # copy list of all source files to file
+
+# copy all source files from src to helpers for cmake
+while read file
+do
+    # if our file is list, then it's not our source file
+    if [[ $file == "list" ]]
+    then
+        continue
+    fi
+
+    cp $file ../helpers
+done < list
+
+cd .. # go back to main folder
+mkdir executables # create a new folder for cmake
+cd executables # go to our new folder
+cmake ../helpers -DUSE_AVX_INSTRUCTIONS=ON # cmake for our project with acceleration using AVX
+cmake --build . # build our project
+cp ../helpers/shape_predictor_68_face_landmarks.dat . # copy predictor from helpers to executables folder, need for some executables
+cd ../src # go back to src folder
+
+# remove all source files copied before cmake from helpers folder
+while read file
+do
+    # if our file is list, then it's not our source file
+    if [[ $file == "list" ]]
+    then
+        continue
+    fi
+
+    rm ../helpers/$file
+done < list
+
+rm list # remove file with a list of source files
+cd .. # go back to main folder
+
+# just for beautiful interface
+for ((i = 0; i < 3; i++))
+do
+    echo
+done
