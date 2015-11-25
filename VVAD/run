@@ -136,6 +136,7 @@ if ! cmake ../helpers -DUSE_AVX_INSTRUCTIONS=ON
 then
     cd .. # go back to main folder
     rm -r executables # delete executables folder
+    cd src # go to src folder
 
     # remove all source files copied before cmake from helpers folder
     while read file
@@ -148,6 +149,17 @@ then
 
         rm ../helpers/$file
     done < list
+
+    rm list # remove file with a list of source files
+    cd .. # go back to main folder
+
+    # just for beautiful interface
+    for ((i = 0; i < 3; i++))
+    do
+        echo
+    done
+
+    exit # finish our script now
 fi
 
 cmake --build . # build our project
