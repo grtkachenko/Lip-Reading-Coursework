@@ -130,7 +130,26 @@ done < list
 cd .. # go back to main folder
 mkdir executables # create a new folder for cmake
 cd executables # go to our new folder
-cmake ../helpers -DUSE_AVX_INSTRUCTIONS=ON # cmake for our project with acceleration using AVX
+
+# try to cmake for our project with acceleration using AVX
+if ! cmake ../helpers -DUSE_AVX_INSTRUCTIONS=ON
+then
+    cd .. # go back to main folder
+    rm -r executables # delete executables folder
+
+    # remove all source files copied before cmake from helpers folder
+    while read file
+    do
+        # if our file is list, then it's not our source file
+        if [[ $file == "list" ]]
+        then
+            continue
+        fi
+
+        rm ../helpers/$file
+    done < list
+fi
+
 cmake --build . # build our project
 cp ../helpers/shape_predictor_68_face_landmarks.dat . # copy predictor from helpers to executables folder, need for some executables
 cd ../src # go back to src folder
