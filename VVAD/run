@@ -43,11 +43,65 @@ then
     exit # finish our script here
 fi
 
+# if we don't have dlib folder, then let's say our user about it
+if ! [[ -d ../dlib ]]
+then
+    echo "Dlib not found!" # information output
+    echo "You need to download it and move to project root folder." # information output
+
+    # just for beautiful interface
+    for ((i = 0; i < 3; i++))
+    do
+        echo
+    done
+
+    exit # finish our script here
+else
+    # if we have dlib folder, maybe it's git submodules,
+    # so let's see if we have another dlib folder inside existing one
+    # if it doesn't exit, maybe we're using git submodules and
+    # haven't updated them yet
+    if ! [[ -d ../dlib/dlib ]]
+    then
+        echo "Dlib not found" # information output
+        echo "Maybe you're using git submodules" # information output
+        echo -n "Would you like to initialize git submodules to load dlib? {No by default} [Y/N]: " # prompt for user
+        read x # read user's feedback
+
+        if [[ $x == "N" || $x == "" ]] # if user doesn't want us to update git submodules, then finish our script
+        then
+            # just for beautiful interface
+            for ((i = 0; i < 3; i++))
+            do
+                echo
+            done
+
+            exit # finish our script here
+        else
+            if [[ $x == "Y" ]] # if our user wants us to load new submodules
+            then
+                git submodule init # let's initialize git submodules
+                git submodule update # load new submodules
+            else
+                echo "Option not recognized. Execution failed" # command not recognized, information output
+
+                # just for beautiful interface
+                for ((i = 0; i < 3; i++))
+                do
+                    echo
+                done
+
+                exit # finish our script here
+            fi
+        fi
+    fi
+fi
+
 # if we have executables folder, then let's see what user wants from this script
 if [[ -d executables ]]
 then
     echo "Executables have already been built." # information output
-    echo -n "Would you like to do cmake from the beginning? {Yes by default} [Y/N]: " # prompt for used
+    echo -n "Would you like to do cmake from the beginning? {Yes by default} [Y/N]: " # prompt for user
     read x # read user's feedback
 
     if [[ $x == "Y" || $x == "" ]] # if user wants to do cmake from the beginning
@@ -99,7 +153,7 @@ then
 
             exit # finish our script here
         else
-            echo "Option not recognized. Execution failed" # command not recognizer, information output
+            echo "Option not recognized. Execution failed" # command not recognized, information output
 
             # just for beautiful interface
             for ((i = 0; i < 3; i++))
