@@ -17,14 +17,12 @@ include(../../dlib/dlib/cmake)
 # Then we tell it to link with dlib.
 
 
-
-
 # Since there are a lot of examples I'm going to use a macro to simply this
 # CMakeLists.txt file.  However, usually you will create only one executable in
 # your cmake projects and use the syntax shown above.
 MACRO(add_example name)
-   ADD_EXECUTABLE(${name} ${name}.cpp)
-   TARGET_LINK_LIBRARIES(${name} dlib )
+    ADD_EXECUTABLE(${name} ${name}.cpp)
+    TARGET_LINK_LIBRARIES(${name} dlib)
 ENDMACRO()
 
 
@@ -32,17 +30,20 @@ ENDMACRO()
 
 find_package(OpenCV)
 if (OpenCV_FOUND)
-   include_directories(${OpenCV_INCLUDE_DIRS})
+    include_directories(${OpenCV_INCLUDE_DIRS})
 
-   ADD_EXECUTABLE(webcam_face_pose_ex webcam_face_pose_ex.cpp)
-   ADD_EXECUTABLE(webcam_belonogov webcam_belonogov.cpp)
-   TARGET_LINK_LIBRARIES(webcam_face_pose_ex dlib ${OpenCV_LIBS} )
-   TARGET_LINK_LIBRARIES(webcam_belonogov dlib ${OpenCV_LIBS} )
-endif()
+    ADD_EXECUTABLE(webcam_face_pose_ex webcam_face_pose_ex.cpp)
+    ADD_EXECUTABLE(webcam_belonogov webcam_belonogov.cpp SegSet.cpp SegSet.h)
+    TARGET_LINK_LIBRARIES(webcam_face_pose_ex dlib ${OpenCV_LIBS})
+    TARGET_LINK_LIBRARIES(webcam_belonogov dlib ${OpenCV_LIBS})
+endif ()
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
 
 
 if (DLIB_LINK_WITH_SQLITE3)
-   add_example(sqlite_ex)
-endif()
+    add_example(sqlite_ex)
+endif ()
 
 
