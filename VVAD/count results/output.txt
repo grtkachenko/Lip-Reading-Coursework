@@ -1,0 +1,295 @@
+From 2.900 to 5.005 seconds
+Subtitles: 2.055 seconds
+Speech: 1.638 seconds
+Union: 1.588 seconds
+Match: 77.27 %
+From 5.005 to 10.010 seconds
+Subtitles: 5.005 seconds
+Speech: 3.804 seconds
+Union: 3.804 seconds
+Match: 76.00 %
+From 10.010 to 15.015 seconds
+Subtitles: 3.105 seconds
+Speech: 3.268 seconds
+Union: 2.663 seconds
+Match: 81.49 %
+From 15.015 to 20.020 seconds
+Subtitles: 4.044 seconds
+Speech: 3.768 seconds
+Union: 3.134 seconds
+Match: 77.50 %
+From 20.020 to 25.025 seconds
+Subtitles: 4.915 seconds
+Speech: 4.305 seconds
+Union: 4.238 seconds
+Match: 86.23 %
+From 25.025 to 30.030 seconds
+Subtitles: 5.005 seconds
+Speech: 4.005 seconds
+Union: 4.005 seconds
+Match: 80.02 %
+From 30.030 to 35.002 seconds
+Subtitles: 4.972 seconds
+Speech: 3.804 seconds
+Union: 3.804 seconds
+Match: 76.51 %
+From 35.002 to 40.007 seconds
+Subtitles: 5.005 seconds
+Speech: 4.107 seconds
+Union: 4.107 seconds
+Match: 82.06 %
+From 40.007 to 45.012 seconds
+Subtitles: 2.975 seconds
+Speech: 3.437 seconds
+Union: 2.338 seconds
+Match: 68.02 %
+From 45.012 to 50.017 seconds
+Subtitles: 5.005 seconds
+Speech: 4.538 seconds
+Union: 4.538 seconds
+Match: 90.67 %
+From 50.017 to 55.022 seconds
+Subtitles: 3.673 seconds
+Speech: 3.938 seconds
+Union: 3.171 seconds
+Match: 80.52 %
+From 55.022 to 60.027 seconds
+Subtitles: 4.837 seconds
+Speech: 4.504 seconds
+Union: 4.336 seconds
+Match: 89.64 %
+From 60.027 to 65.032 seconds
+Subtitles: 5.005 seconds
+Speech: 4.171 seconds
+Union: 4.171 seconds
+Match: 83.34 %
+From 65.032 to 70.004 seconds
+Subtitles: 4.972 seconds
+Speech: 3.303 seconds
+Union: 3.303 seconds
+Match: 66.43 %
+From 70.004 to 75.009 seconds
+Subtitles: 5.005 seconds
+Speech: 4.239 seconds
+Union: 4.239 seconds
+Match: 84.70 %
+From 75.009 to 80.014 seconds
+Subtitles: 5.005 seconds
+Speech: 3.371 seconds
+Union: 3.371 seconds
+Match: 67.35 %
+From 80.014 to 85.019 seconds
+Subtitles: 4.646 seconds
+Speech: 3.970 seconds
+Union: 3.836 seconds
+Match: 82.57 %
+From 85.019 to 90.024 seconds
+Subtitles: 4.084 seconds
+Speech: 4.206 seconds
+Union: 3.552 seconds
+Match: 84.45 %
+From 90.024 to 95.029 seconds
+Subtitles: 3.355 seconds
+Speech: 4.573 seconds
+Union: 2.990 seconds
+Match: 65.38 %
+From 95.029 to 100.101 seconds
+Subtitles: 4.441 seconds
+Speech: 4.170 seconds
+Union: 3.539 seconds
+Match: 79.69 %
+From 100.101 to 105.005 seconds
+Subtitles: 4.405 seconds
+Speech: 3.969 seconds
+Union: 3.470 seconds
+Match: 78.77 %
+From 105.005 to 110.010 seconds
+Subtitles: 3.375 seconds
+Speech: 4.105 seconds
+Union: 3.010 seconds
+Match: 73.33 %
+From 110.010 to 115.015 seconds
+Subtitles: 5.005 seconds
+Speech: 4.105 seconds
+Union: 4.105 seconds
+Match: 82.02 %
+From 115.015 to 120.020 seconds
+Subtitles: 3.589 seconds
+Speech: 3.738 seconds
+Union: 2.816 seconds
+Match: 75.33 %
+From 120.020 to 125.025 seconds
+Subtitles: 4.020 seconds
+Speech: 4.337 seconds
+Union: 3.586 seconds
+Match: 82.68 %
+From 125.025 to 130.030 seconds
+Subtitles: 4.530 seconds
+Speech: 4.337 seconds
+Union: 3.862 seconds
+Match: 85.25 %
+From 130.030 to 135.002 seconds
+Subtitles: 3.562 seconds
+Speech: 3.103 seconds
+Union: 2.813 seconds
+Match: 78.97 %
+From 135.002 to 140.007 seconds
+Subtitles: 4.837 seconds
+Speech: 4.205 seconds
+Union: 4.205 seconds
+Match: 86.93 %
+From 140.007 to 145.012 seconds
+Subtitles: 4.172 seconds
+Speech: 4.104 seconds
+Union: 3.504 seconds
+Match: 83.99 %
+From 145.012 to 150.017 seconds
+Subtitles: 5.005 seconds
+Speech: 4.438 seconds
+Union: 4.438 seconds
+Match: 88.67 %
+From 150.017 to 155.022 seconds
+Subtitles: 3.225 seconds
+Speech: 3.770 seconds
+Union: 2.775 seconds
+Match: 73.61 %
+From 155.022 to 160.027 seconds
+Subtitles: 5.005 seconds
+Speech: 4.605 seconds
+Union: 4.605 seconds
+Match: 92.01 %
+From 160.027 to 165.032 seconds
+Subtitles: 3.994 seconds
+Speech: 3.735 seconds
+Union: 3.135 seconds
+Match: 78.49 %
+From 165.032 to 170.004 seconds
+Subtitles: 3.882 seconds
+Speech: 4.471 seconds
+Union: 3.381 seconds
+Match: 75.62 %
+From 170.004 to 175.009 seconds
+Subtitles: 5.005 seconds
+Speech: 3.904 seconds
+Union: 3.904 seconds
+Match: 78.00 %
+From 175.009 to 180.014 seconds
+Subtitles: 5.005 seconds
+Speech: 4.136 seconds
+Union: 4.136 seconds
+Match: 82.64 %
+From 180.014 to 185.019 seconds
+Subtitles: 5.005 seconds
+Speech: 4.237 seconds
+Union: 4.237 seconds
+Match: 84.66 %
+From 185.019 to 190.024 seconds
+Subtitles: 3.915 seconds
+Speech: 4.337 seconds
+Union: 3.247 seconds
+Match: 74.87 %
+From 190.024 to 195.029 seconds
+Subtitles: 5.005 seconds
+Speech: 4.171 seconds
+Union: 4.171 seconds
+Match: 83.34 %
+From 195.029 to 200.000 seconds
+Subtitles: 4.971 seconds
+Speech: 3.935 seconds
+Union: 3.935 seconds
+Match: 79.16 %
+From 200.000 to 205.005 seconds
+Subtitles: 5.005 seconds
+Speech: 4.271 seconds
+Union: 4.271 seconds
+Match: 85.33 %
+From 205.005 to 210.010 seconds
+Subtitles: 5.005 seconds
+Speech: 4.006 seconds
+Union: 4.006 seconds
+Match: 80.04 %
+From 210.010 to 215.015 seconds
+Subtitles: 3.005 seconds
+Speech: 3.203 seconds
+Union: 2.515 seconds
+Match: 78.52 %
+From 215.015 to 220.020 seconds
+Subtitles: 4.865 seconds
+Speech: 4.139 seconds
+Union: 4.139 seconds
+Match: 85.08 %
+From 220.020 to 225.025 seconds
+Subtitles: 3.355 seconds
+Speech: 3.237 seconds
+Union: 2.603 seconds
+Match: 77.59 %
+From 225.025 to 230.030 seconds
+Subtitles: 3.265 seconds
+Speech: 3.935 seconds
+Union: 2.861 seconds
+Match: 72.71 %
+From 230.030 to 235.002 seconds
+Subtitles: 4.972 seconds
+Speech: 4.138 seconds
+Union: 4.138 seconds
+Match: 83.23 %
+From 235.002 to 240.007 seconds
+Subtitles: 5.005 seconds
+Speech: 4.370 seconds
+Union: 4.370 seconds
+Match: 87.31 %
+From 240.007 to 245.012 seconds
+Subtitles: 3.983 seconds
+Speech: 3.538 seconds
+Union: 3.304 seconds
+Match: 82.95 %
+From 245.012 to 250.017 seconds
+Subtitles: 4.647 seconds
+Speech: 3.973 seconds
+Union: 3.639 seconds
+Match: 78.31 %
+From 250.017 to 255.022 seconds
+Subtitles: 5.005 seconds
+Speech: 4.339 seconds
+Union: 4.339 seconds
+Match: 86.69 %
+From 255.022 to 260.027 seconds
+Subtitles: 3.595 seconds
+Speech: 3.471 seconds
+Union: 2.662 seconds
+Match: 74.05 %
+From 260.027 to 265.032 seconds
+Subtitles: 5.005 seconds
+Speech: 4.137 seconds
+Union: 4.137 seconds
+Match: 82.66 %
+From 265.032 to 270.004 seconds
+Subtitles: 4.972 seconds
+Speech: 4.405 seconds
+Union: 4.405 seconds
+Match: 88.60 %
+From 270.004 to 275.009 seconds
+Subtitles: 5.005 seconds
+Speech: 4.539 seconds
+Union: 4.539 seconds
+Match: 90.69 %
+From 275.009 to 280.014 seconds
+Subtitles: 5.005 seconds
+Speech: 4.104 seconds
+Union: 4.104 seconds
+Match: 82.00 %
+From 280.014 to 285.019 seconds
+Subtitles: 3.795 seconds
+Speech: 4.405 seconds
+Union: 3.428 seconds
+Match: 77.82 %
+From 285.019 to 290.024 seconds
+Subtitles: 5.005 seconds
+Speech: 3.637 seconds
+Union: 3.637 seconds
+Match: 72.67 %
+From 290.024 to 295.029 seconds
+Subtitles: 4.946 seconds
+Speech: 3.069 seconds
+Union: 3.069 seconds
+Match: 62.05 %

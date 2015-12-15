@@ -68,7 +68,7 @@ else
         echo -n "Would you like to initialize git submodules to load dlib? {No by default} [Y/N]: " # prompt for user
         read x # read user's feedback
 
-        if [[ $x == "N" || $x == "" ]] # if user doesn't want us to update git submodules, then finish our script
+        if [[ $x == "N" || $x == "n" || $x == "" ]] # if user doesn't want us to update git submodules, then finish our script
         then
             # just for beautiful interface
             for ((i = 0; i < 3; i++))
@@ -101,14 +101,14 @@ fi
 if [[ -d executables ]]
 then
     echo "Executables have already been built." # information output
-    echo -n "Would you like to do cmake from the beginning? {Yes by default} [Y/N]: " # prompt for user
+    echo -n "Would you like to do cmake from the beginning? {No by default} [Y/N]: " # prompt for user
     read x # read user's feedback
 
-    if [[ $x == "Y" || $x == "" ]] # if user wants to do cmake from the beginning
+    if [[ $x == "Y" || $x == "y" ]] # if user wants to do cmake from the beginning
     then
         rm -r executables # delete executables for beginning
     else
-        if [[ $x == "N" ]] # if user doesn't want to build from the beginning
+        if [[ $x == "N" || $x == "n" || $x == "" ]] # if user doesn't want to build from the beginning
         then
             cd src # go to source files folder
             ls -A > list # copy list of all source files to file
@@ -217,7 +217,41 @@ then
 fi
 
 cmake --build . # build our project
+
+# if shape predictor doesn't exist, tell our user about it
+if ! [[ -f ../helpers/shape_predictor_68_face_landmarks.dat ]]
+then
+    echo "Shape_predictor_68_face_landmarks.dat hasn't been found!" # information output
+    echo "If you have this file on your computer, copy it to helpers folder!" # information output
+    echo "Otherwise download it!" # information output
+    echo "Be careful, 61 MBs are going to be downloaded, if you wish so!" # information output
+    echo -n "Download shape predictor right now? {Yes by default} [Y/N]: " # prompt for user
+    read x # read user's feedback
+
+    if [[ $x == "Y" || $x == "y" || $x == "" ]]
+    then
+        curl http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2 > ../helpers/shape_predictor_68_face_landmarks.dat.bz2 # download shape predictor from the Internet to file on computer zipped with bzip2
+        bunzip2 ../helpers/shape_predictor_68_face_landmarks.dat.bz2 # unzip our shape predictor
+    else
+        if [[ $x == "N" || $x == "n" ]]
+        then
+            echo "Cleaning everything right now!" # information output
+            cd .. # go back to main folder
+            ./run delete # clean everything
+            exit # exit our script now
+        else
+            echo "Option not recognized. Execution failed!" # information output
+            echo "Cleaning everything right now!" # information output
+            cd .. # go back to main folder
+            ./run delete # clean everything
+            exit # exit our script now
+        fi
+    fi
+fi
+
 cp ../helpers/shape_predictor_68_face_landmarks.dat . # copy predictor from helpers to executables folder, need for some executables
+cp ../helpers/test.mp4 . # copy video from helpers to executables folder, need for some executables
+cp ../helpers/test.srt . # copy subtitles from helpers to executables folder, need for some executables
 cd ../src # go back to src folder
 
 # remove all source files copied before cmake from helpers folder
