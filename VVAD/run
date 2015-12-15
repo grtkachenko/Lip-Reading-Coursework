@@ -78,7 +78,7 @@ else
 
             exit # finish our script here
         else
-            if [[ $x == "Y" ]] # if our user wants us to load new submodules
+            if [[ $x == "Y" || $x == "y" ]] # if our user wants us to load new submodules
             then
                 git submodule init # let's initialize git submodules
                 git submodule update # load new submodules
