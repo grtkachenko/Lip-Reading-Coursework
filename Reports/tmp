@@ -1,0 +1,20 @@
+1. neural networks
+learn it
+see what we got
+we don't need to think a lot about nature of our features
+but we don't know about learning of our neural network
+very difficult to teach
+2. analysis of some easier algorithms
+from audio try to make classification by unknown types (e. g. phonems)
+from fonems we can try clasterize by groups
+gauss mixture models
+i. e. from our place to decide what to do with our landmark
+
+NEXT
+from lip image we need to know what we speak
+16 KHz (16 numbers per second)
+main sounds, make small pieces (10-50 miliseconds)
+remember what they mean
+clasterize (phonems)
+give sound (not very good)
+but if quiet long, sound will be quiet good
