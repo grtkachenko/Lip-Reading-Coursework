@@ -1,3 +1,6 @@
 [submodule "dlib"]
 	path = dlib
 	url = https://github.com/davisking/dlib.git
+[submodule "python_speech_features"]
+	path = python_speech_features
+	url = https://github.com/jameslyons/python_speech_features.git
