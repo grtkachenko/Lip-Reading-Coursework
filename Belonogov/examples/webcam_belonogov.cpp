@@ -40,15 +40,70 @@
 #include "SegSet.h"
 #include <vector>
 #include <chrono>
+#include <stdio.h>
 
 //using namespace cv;
 
 
+
 #define db(x) cerr << #x << " = " << x << endl
 #define db2(x, y) cerr << "(" << #x << ", " << #y << ") = (" << x << ", " << y << ")\n"
+#define equal equall
+#define less lesss
 
 using namespace dlib;
-using namespace std;
+
+bool equal(double a, double b) {
+    return abs(a - b) < 1e-9;
+}
+
+bool less(double a, double b) {
+    return a < b && !equal(a, b);
+}
+
+bool lessE(double a, double b) {
+    return a < b || equal(a, b);
+}
+
+struct pnt {
+    double x, y;
+    pnt () {}
+    pnt (double x, double y): x(x), y(y) {}
+    pnt operator + (pnt A) {
+        return pnt(x + A.x, y + A.y);
+    }
+    pnt operator - (pnt A) {
+        return pnt(x - A.x, y - A.y);
+    }
+    pnt operator * (double k) {
+        return pnt(x * k, y * k);
+    }
+    pnt operator / (double k) {
+        return pnt(x / k, y / k);
+    }
+    double len() {
+        return sqrt(x * x + y * y);
+    }
+    pnt rotate(double ang) {
+        return pnt(x * cos(ang) - y * sin(ang), x * sin(ang) + y * cos(ang));
+    }
+};
+
+//
+//struct Lips {
+//    vector < point > data;
+//    Lips(int size) {
+//        data.resize(size);
+//    }
+//};
+
+
+struct MyFrame {
+    double time;
+    int id;
+    std::vector < pnt > lips;
+    MyFrame(double time, int id, std::vector < pnt > lips): time(time), id(id), lips(lips) {}
+};
 
 
 void test() {
@@ -84,6 +139,23 @@ void test() {
     }
 }
 
+std::vector < pair < double, std::vector < double > > > audioFeature;
+int n, m;
+double winStep, winLen;
+
+void readAudioFeature() {
+    FILE * feature = fopen("audio_feat.txt", "r");
+    assert(fscanf(feature, "%d%d%lf%lf", &n, &m, &winStep, &winLen) == 4);
+    for (int i = 0; i < n; i++) {
+        double tmr;
+        std::vector < double > featureVector(m);
+        assert(fscanf(feature, "%lf:", &tmr) == 1);
+        for (int j = 0; j < m; j++)
+            assert(fscanf(feature, "%lf", &featureVector[j]) == 1);
+        audioFeature.push_back(make_pair(tmr, featureVector));
+    }
+    db("success read");
+}
 
 void playVideo() {
     db("start function");
@@ -122,12 +194,13 @@ void playVideo() {
     using namespace cv;
 
     VideoCapture cap("inception.avi"); // open the default camera
+    //VideoCapture cap(0); // open the default camera
+
+
     if (!cap.isOpened()) { // check if we succeeded
         assert(false);
     }
-    double startTime = 180;
     int lastMinute = 3;
-    double step = 30;
     cap.set(CV_CAP_PROP_POS_MSEC, 1000 * 60 * lastMinute);
     //cap.set(CV_CAP_PROP_POS_MSEC, 1000 * 470);
 
@@ -138,12 +211,14 @@ void playVideo() {
     image_window win;
 
 
-    SegSet speak;
     SegSet oneFace;
     double prevFrame = lastMinute * 60;
-    for (int it = 0; ;it++) {
+    std::vector < MyFrame > myFrame;
+    for (int it = 0; ;it++) { // TODO change restriction
         Mat frame;
         cap >> frame; // get a new frame from camera
+        double curTime = cap.get(CV_CAP_PROP_POS_MSEC);
+        if (curTime > 1000 * 60 * 3.5) break;
 
         cv_image<bgr_pixel> cimg(frame);
         std::vector<dlib::rectangle> faces = detector(cimg);
@@ -159,57 +234,127 @@ void playVideo() {
         double tmr = cap.get(CV_CAP_PROP_POS_MSEC) / 1000.0;
 
         if (shapes.size() == 1) {
-            oneFace.add(prevFrame, tmr);
-        }
-
-        if (!shapes.empty()) {
-            assert(shapes[0].num_parts() == 68);
-            for (int i = 60; i < 68; i += 2) {
-                point A = shapes[0].part(i);
-                circle(frame, cv::Point(A.x(), A.y()), 3,
-                       cv::Scalar(0, 0, (int) (255 * i * 1.0 / shapes[0].num_parts())), cv::FILLED, cv::LINE_AA);
+            std::vector< pnt > lips;
+            for (int i = 48; i < 68; i++) {
+                lips.push_back(pnt(shapes[0].part(i).x(), shapes[0].part(i).y()));
+                //point C = lips.back();
+                //circle(frame, cv::Point(C.x(), C.y()), 2, cv::Scalar(255, 0, 0), cv::FILLED, cv::LINE_AA);
             }
-            double leftToRigth = (shapes[0].part(60) - shapes[0].part(64)).length();
-            double upToDown = (shapes[0].part(62) - shapes[0].part(66)).length();
+            pnt Mid = (lips[0] + lips[6]) / 2;
+            for (auto &p: lips)
+                p = p - Mid;
+            double len = (lips[0] - lips[6]).len() / 2;
+            assert(equal(lips[0].len(), lips[6].len()));
+            for (auto &p: lips)
+                p = p / len;
+            double ang = atan2(lips[6].y, lips[6].x);
+            for (auto &p: lips)
+                p = p.rotate(-ang);
+            assert(equal(0, atan2(lips[6].y, lips[6].x)));
 
-            if (upToDown / leftToRigth > 0.07) {
-                circle(frame, cv::Point(20, 20), 10, cv::Scalar(255, 0, 0), cv::FILLED, cv::LINE_AA);
-                speak.add(prevFrame, tmr);
-            }
-
+            myFrame.push_back(MyFrame(tmr, it, lips));
         }
-
         win.clear_overlay();
         win.set_image(cimg);
         win.add_overlay(render_face_detections(shapes));
-        if (waitKey(30) >= 0) break;
-        //if (it % 400 == 0)
-            //cout << tmr << endl;
-
-
-        if (tmr / 60 > (lastMinute + 1)) {
-            SegSet M;
-            M.add(lastMinute * 60, (lastMinute + 1) * 60);
-            SegSet A = subtitles & oneFace;
-            SegSet B = speak & oneFace;
-            ///(M & subtitles).print();
-            //oneFace.print();
-            double lenA = A.getLen();
-            double lenB = B.getLen();
-            double together = (A & B).getLen();
-
-            cerr.precision(2);
-            cerr << fixed;
-            cerr << "oneFace : " << oneFace.getLen() << "   sub speak  together: " << lenA << " " << lenB << " " << together << "    proportion % " << together / max(lenA, lenB) <<  endl;
-
-
-            oneFace.clear();
-            speak.clear();
-            lastMinute++;
-        }
-        prevFrame = tmr;
     }
-    exit(0);
+
+    for (int i = 0; i < (int)myFrame.size(); ) {
+        int j = i;
+        for (; i < (int)myFrame.size() && i - myFrame[i].id == j - myFrame[j].id; i++);
+        if (i - j > 1) {
+            oneFace.add(myFrame[j].time, myFrame[i - 1].time);
+        }
+    }
+
+    SegSet faceAndSub = oneFace & subtitles;
+    db(faceAndSub.getLen());
+
+
+    readAudioFeature();
+
+    std::vector < pair < std::vector < double >, std::vector < pnt > > > dataForLearning;
+    int cur = 0;
+    int curMyFrame = 0;
+    for (int i = 0; i < (int)audioFeature.size(); i++) {
+        double tmr = audioFeature[i].first + winLen / 2;
+        for (; cur < (int)faceAndSub.data.size() && faceAndSub.data[cur].sc < tmr; cur++);
+        if (cur < (int)faceAndSub.data.size() && faceAndSub.data[cur].fr <= tmr && tmr <= faceAndSub.data[cur].sc) {
+            for (; curMyFrame < (int)myFrame.size() && less(myFrame[curMyFrame].time, tmr); curMyFrame++);
+            assert(curMyFrame < (int)myFrame.size());
+            auto & m1 = myFrame[curMyFrame - 1];
+            auto & m2 = myFrame[curMyFrame];
+            assert(m1.id + 1 == m2.id);
+            double len = m2.time - m1.time;
+            double l = tmr - m1.time;
+            double r = m2.time - tmr;
+            std::vector < pnt > lips;
+            for (int j = 0; j < (int)m1.lips.size(); j++)
+                lips.push_back((m1.lips[j] * r + m2.lips[j] * l) / len);
+            dataForLearning.push_back(make_pair(audioFeature[i].second, lips));
+        }
+    }
+    db(dataForLearning.size());
+
+
+
+        /// old statistic
+//        if (shapes.size() == 1) {
+//            oneFace.add(prevFrame, tmr);
+//        }
+//
+//
+//        if (!shapes.empty()) {
+//            assert(shapes[0].num_parts() == 68);
+//            for (int i = 60; i < 68; i += 2) {
+//                point A = shapes[0].part(i);
+//                circle(frame, cv::Point(A.x(), A.y()), 3,
+//                       cv::Scalar(0, 0, (int) (255 * i * 1.0 / shapes[0].num_parts())), cv::FILLED, cv::LINE_AA);
+//            }
+//            double leftToRigth = (shapes[0].part(60) - shapes[0].part(64)).length();
+//            double upToDown = (shapes[0].part(62) - shapes[0].part(66)).length();
+//
+//            if (upToDown / leftToRigth > 0.07) {
+//                circle(frame, cv::Point(20, 20), 10, cv::Scalar(255, 0, 0), cv::FILLED, cv::LINE_AA);
+//                speak.add(prevFrame, tmr);
+//            }
+//
+//        }
+//
+//        win.clear_overlay();
+//        win.set_image(cimg);
+//        win.add_overlay(render_face_detections(shapes));
+//        if (waitKey(30) >= 0) break;
+//        //if (it % 400 == 0)
+//            //cout << tmr << endl;
+//
+//
+//        if (tmr / 60 > (lastMinute + 1)) {
+//            SegSet M;
+//            M.add(lastMinute * 60, (lastMinute + 1) * 60);
+//            SegSet A = subtitles & oneFace;
+//            SegSet B = speak & oneFace;
+//            ///(M & subtitles).print();
+//            //oneFace.print();
+//            double lenA = A.getLen();
+//            double lenB = B.getLen();
+//            double together = (A & B).getLen();
+//
+//            cerr.precision(2);
+//            cerr << fixed;
+//            cerr << "oneFace : " << oneFace.getLen() << "   sub speak  together: " << lenA << " " << lenB << " " << together << "    proportion % " << together / max(lenA, lenB) <<  endl;
+//
+//
+//            oneFace.clear();
+//            speak.clear();
+//            lastMinute++;
+//        }
+//        prevFrame = tmr;
+//    }
+//
+//
+//
+//    exit(0);
 }
 
 int main() {
