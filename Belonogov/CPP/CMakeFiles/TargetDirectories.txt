@@ -1,0 +1,2 @@
+/home/vanya/Documents/LR/4/Lip-Reading-Coursework/Belonogov/CPP/CMakeFiles/CPP.dir
+/home/vanya/Documents/LR/4/Lip-Reading-Coursework/Belonogov/CPP/dlib_build/CMakeFiles/dlib.dir
