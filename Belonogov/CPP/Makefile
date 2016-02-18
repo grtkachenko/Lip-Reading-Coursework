@@ -175,6 +175,30 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/CPP.dir/build.make CMakeFiles/CPP.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+pnt.o: pnt.cpp.o
+.PHONY : pnt.o
+
+# target to build an object file
+pnt.cpp.o:
+	$(MAKE) -f CMakeFiles/CPP.dir/build.make CMakeFiles/CPP.dir/pnt.cpp.o
+.PHONY : pnt.cpp.o
+
+pnt.i: pnt.cpp.i
+.PHONY : pnt.i
+
+# target to preprocess a source file
+pnt.cpp.i:
+	$(MAKE) -f CMakeFiles/CPP.dir/build.make CMakeFiles/CPP.dir/pnt.cpp.i
+.PHONY : pnt.cpp.i
+
+pnt.s: pnt.cpp.s
+.PHONY : pnt.s
+
+# target to generate assembly for a file
+pnt.cpp.s:
+	$(MAKE) -f CMakeFiles/CPP.dir/build.make CMakeFiles/CPP.dir/pnt.cpp.s
+.PHONY : pnt.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -191,6 +215,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... pnt.o"
+	@echo "... pnt.i"
+	@echo "... pnt.s"
 .PHONY : help
 
 

@@ -2,8 +2,8 @@
 // Created by vanya on 13.12.15.
 //
 
-#ifndef EXAMPLES_SEGSET_H
-#define EXAMPLES_SEGSET_H
+#ifndef SEGSET_H
+#define SEGSET_H
 
 
 #include <iostream>

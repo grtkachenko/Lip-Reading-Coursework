@@ -1,28 +1,9 @@
-#include <dlib/opencv.h>
-#include <opencv2/highgui/highgui.hpp>
-#include <dlib/image_processing/frontal_face_detector.h>
-#include <dlib/image_processing/render_face_detections.h>
-#include <dlib/image_processing.h>
-#include <dlib/gui_widgets.h>
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc.hpp>
-#include "opencv2/opencv.hpp"
 #include "SegSet.h"
-#include <vector>
-#include <chrono>
-#include <stdio.h>
-
-//using namespace cv;
+#include "pnt.h"
+#include "main.h"
 
 
 
-#define db(x) cerr << #x << " = " << x << endl
-#define db2(x, y) cerr << "(" << #x << ", " << #y << ") = (" << x << ", " << y << ")\n"
-#define equal equall
-#define less lesss
-
-using namespace dlib;
 
 bool equal(double a, double b) {
     return abs(a - b) < 1e-9;
@@ -36,44 +17,12 @@ bool lessE(double a, double b) {
     return a < b || equal(a, b);
 }
 
-struct pnt {
-    double x, y;
-    pnt () {}
-    pnt (double x, double y): x(x), y(y) {}
-    pnt operator + (pnt A) {
-        return pnt(x + A.x, y + A.y);
-    }
-    pnt operator - (pnt A) {
-        return pnt(x - A.x, y - A.y);
-    }
-    pnt operator * (double k) {
-        return pnt(x * k, y * k);
-    }
-    pnt operator / (double k) {
-        return pnt(x / k, y / k);
-    }
-    double len() {
-        return sqrt(x * x + y * y);
-    }
-    pnt rotate(double ang) {
-        return pnt(x * cos(ang) - y * sin(ang), x * sin(ang) + y * cos(ang));
-    }
-};
-
-//
-//struct Lips {
-//    vector < point > data;
-//    Lips(int size) {
-//        data.resize(size);
-//    }
-//};
-
 
 struct MyFrame {
     double time;
     int id;
-    std::vector < pnt > lips;
-    MyFrame(double time, int id, std::vector < pnt > lips): time(time), id(id), lips(lips) {}
+    Lips lips;
+    MyFrame(double time, int id, Lips lips): time(time), id(id), lips(lips) {}
 };
 
 
@@ -110,6 +59,9 @@ void test() {
     }
 }
 
+
+
+
 std::vector < pair < double, std::vector < double > > > audioFeature;
 int n, m;
 double winStep, winLen;
@@ -128,72 +80,76 @@ void readAudioFeature() {
     db("success read");
 }
 
-void playVideo() {
-    db("start function");
-    assert(freopen("inception.srt", "r", stdin) != 0);
+void drawRect(cv::Mat & frame) {
+    int w = frame.cols;
+    int hh = 50;
+    int ww = 100;
+    cv::Point A(w - ww, 0);
+    cv::Point B(w - 1, hh - 1);
+    cv::rectangle(frame, A, B, cv::Scalar(0, 0, 0), cv::FILLED, 0);
+}
 
+void drawLips(cv::Mat & frame, Lips lips) {
+    int w = frame.cols;
+    int hh = 50;
+    int ww = 100;
+    cv::Point A(w - ww, 0);
+    cv::Point B(w - 1, hh - 1);
+
+    lips.setScale(30);  
+    lips.shift((A + B) / 2);
+
+    auto segments = lips.getContour();
+    for (auto s: segments)
+        cv::line(frame, s.fr.getCVPoint(), s.sc.getCVPoint(), cv::Scalar(0, 0, 255)); 
+}
+
+void playVideo() {
+    assert(freopen("inception.srt", "r", stdin) != 0);
     string s;
-    int cnt;
-    db("start loop");
     getline(cin, s);
-    db(s);
     SegSet subtitles;
     while (getline(cin, s)) {
         if (s.find("-->") != string::npos) {
-            cnt++;
-            //db(cnt);
             int t1, t2, t3, t4;
             int r1, r2, r3, r4;
             assert(sscanf(s.data(), "%d:%d:%d,%d --> %d:%d:%d,%d", &t1, &t2, &t3, &t4, &r1, &r2, &r3, &r4) == 8);
-//            if (res != 8) {
-//                db2(res, cnt);
-//                cerr << s << endl;
-//            }
-//            assert(res == 8);
-            //cerr << "t1 t2 t3 t4 " << t1 << " " << t2 << " " << t3 << " " << t4 << endl;
             double l = t1 * 3600 + t2 * 60 + t3 + t4 / 1000.0;
             double r = r1 * 3600 + r2 * 60 + r3 + r4 / 1000.0;
-            //cerr << "t1 t2 t3 t4 " << t1 << " " << t2 << " " << t3 << " " << t4 << endl;
             subtitles.add(l, r);
         }
     }
-    //subtitles.print();
     cerr << subtitles.getLen() << endl;
-    db(cnt);
-    //exit(0);
 
-    using namespace cv;
 
-    VideoCapture cap("inception.avi"); // open the default camera
-    //VideoCapture cap(0); // open the default camera
-
+    cv::VideoCapture cap("inception.avi"); // open the default camera
 
     if (!cap.isOpened()) { // check if we succeeded
         assert(false);
     }
     int lastMinute = 3;
     cap.set(CV_CAP_PROP_POS_MSEC, 1000 * 60 * lastMinute);
-    //cap.set(CV_CAP_PROP_POS_MSEC, 1000 * 470);
 
-    frontal_face_detector detector = get_frontal_face_detector();
-    shape_predictor pose_model;
-    deserialize("shape_predictor_68_face_landmarks.dat") >> pose_model;
+    dlib::frontal_face_detector detector = dlib::get_frontal_face_detector();
+    dlib::shape_predictor pose_model;
 
-    image_window win;
+    dlib::deserialize("shape_predictor_68_face_landmarks.dat") >> pose_model;
+
+    dlib::image_window win;
 
 
     SegSet oneFace;
-    double prevFrame = lastMinute * 60;
     std::vector < MyFrame > myFrame;
     for (int it = 0; ;it++) { // TODO change restriction
-        Mat frame;
+        cv::Mat frame;
         cap >> frame; // get a new frame from camera
         double curTime = cap.get(CV_CAP_PROP_POS_MSEC);
+        db(it);
         if (curTime > 1000 * 60 * 3.5) break;
 
-        cv_image<bgr_pixel> cimg(frame);
+        dlib::cv_image<dlib::bgr_pixel> cimg(frame);
         std::vector<dlib::rectangle> faces = detector(cimg);
-        std::vector<full_object_detection> shapes;
+        std::vector<dlib::full_object_detection> shapes;
         for (unsigned long i = 0; i < faces.size(); ++i)
             shapes.push_back(pose_model(cimg, faces[i]));
 
@@ -204,31 +160,29 @@ void playVideo() {
 
         double tmr = cap.get(CV_CAP_PROP_POS_MSEC) / 1000.0;
 
+        //cv::Point A(w - ww, 0);
+        //cv::Point B(w - 1, hh);
+        //db2(A.x, A.y);
+        //db2(B.x, B.y);
+
+        drawRect(frame);
         if (shapes.size() == 1) {
-            std::vector< pnt > lips;
+            std::vector < pnt > lips;
             for (int i = 48; i < 68; i++) {
                 lips.push_back(pnt(shapes[0].part(i).x(), shapes[0].part(i).y()));
-                //point C = lips.back();
-                //circle(frame, cv::Point(C.x(), C.y()), 2, cv::Scalar(255, 0, 0), cv::FILLED, cv::LINE_AA);
+                pnt C = lips.back();
+                cv::circle(frame, cv::Point(C.x, C.y), 2, cv::Scalar(255, 0, 0), cv::FILLED, cv::LINE_AA);
             }
-            pnt Mid = (lips[0] + lips[6]) / 2;
-            for (auto &p: lips)
-                p = p - Mid;
-            double len = (lips[0] - lips[6]).len() / 2;
-            assert(equal(lips[0].len(), lips[6].len()));
-            for (auto &p: lips)
-                p = p / len;
-            double ang = atan2(lips[6].y, lips[6].x);
-            for (auto &p: lips)
-                p = p.rotate(-ang);
-            assert(equal(0, atan2(lips[6].y, lips[6].x)));
-
-            myFrame.push_back(MyFrame(tmr, it, lips));
+            Lips l(lips);
+            l.normalize();
+            myFrame.push_back(MyFrame(tmr, it, l));
+            drawLips(frame, l);
         }
         win.clear_overlay();
         win.set_image(cimg);
         win.add_overlay(render_face_detections(shapes));
     }
+
 
     for (int i = 0; i < (int)myFrame.size(); ) {
         int j = i;
@@ -244,7 +198,7 @@ void playVideo() {
 
     readAudioFeature();
 
-    std::vector < pair < std::vector < double >, std::vector < pnt > > > dataForLearning;
+    std::vector < pair < std::vector < double >,  Lips > > dataForLearning;
     int cur = 0;
     int curMyFrame = 0;
     for (int i = 0; i < (int)audioFeature.size(); i++) {
@@ -260,161 +214,23 @@ void playVideo() {
             double l = tmr - m1.time;
             double r = m2.time - tmr;
             std::vector < pnt > lips;
-            for (int j = 0; j < (int)m1.lips.size(); j++)
-                lips.push_back((m1.lips[j] * r + m2.lips[j] * l) / len);
-            dataForLearning.push_back(make_pair(audioFeature[i].second, lips));
+            auto lipsPrev = m1.lips.getData();
+            auto lipsNext = m2.lips.getData();
+
+            for (int j = 0; j < (int)lipsPrev.size(); j++)
+                lips.push_back((lipsPrev[j] * r + lipsNext[j] * l) / len);
+            dataForLearning.push_back(make_pair(audioFeature[i].second, Lips(lips)));
         }
     }
     db(dataForLearning.size());
 
 
 
-        /// old statistic
-//        if (shapes.size() == 1) {
-//            oneFace.add(prevFrame, tmr);
-//        }
-//
-//
-//        if (!shapes.empty()) {
-//            assert(shapes[0].num_parts() == 68);
-//            for (int i = 60; i < 68; i += 2) {
-//                point A = shapes[0].part(i);
-//                circle(frame, cv::Point(A.x(), A.y()), 3,
-//                       cv::Scalar(0, 0, (int) (255 * i * 1.0 / shapes[0].num_parts())), cv::FILLED, cv::LINE_AA);
-//            }
-//            double leftToRigth = (shapes[0].part(60) - shapes[0].part(64)).length();
-//            double upToDown = (shapes[0].part(62) - shapes[0].part(66)).length();
-//
-//            if (upToDown / leftToRigth > 0.07) {
-//                circle(frame, cv::Point(20, 20), 10, cv::Scalar(255, 0, 0), cv::FILLED, cv::LINE_AA);
-//                speak.add(prevFrame, tmr);
-//            }
-//
-//        }
-//
-//        win.clear_overlay();
-//        win.set_image(cimg);
-//        win.add_overlay(render_face_detections(shapes));
-//        if (waitKey(30) >= 0) break;
-//        //if (it % 400 == 0)
-//            //cout << tmr << endl;
-//
-//
-//        if (tmr / 60 > (lastMinute + 1)) {
-//            SegSet M;
-//            M.add(lastMinute * 60, (lastMinute + 1) * 60);
-//            SegSet A = subtitles & oneFace;
-//            SegSet B = speak & oneFace;
-//            ///(M & subtitles).print();
-//            //oneFace.print();
-//            double lenA = A.getLen();
-//            double lenB = B.getLen();
-//            double together = (A & B).getLen();
-//
-//            cerr.precision(2);
-//            cerr << fixed;
-//            cerr << "oneFace : " << oneFace.getLen() << "   sub speak  together: " << lenA << " " << lenB << " " << together << "    proportion % " << together / max(lenA, lenB) <<  endl;
-//
-//
-//            oneFace.clear();
-//            speak.clear();
-//            lastMinute++;
-//        }
-//        prevFrame = tmr;
-//    }
-//
-//
-//
-//    exit(0);
+
 }
 
 int main() {
     playVideo();
-//
-//    try {
-//        cv::VideoCapture cap(0);
-//        image_window win;
-//
-//        // Load face detection and pose estimation models.
-//        frontal_face_detector detector = get_frontal_face_detector();
-//        shape_predictor pose_model;
-//        deserialize("shape_predictor_68_face_landmarks.dat") >> pose_model;
-//
-//        // Grab and process frames until the main window is closed by the user.
-//
-//        while (!win.is_closed()) {
-//            // Grab a frame
-//            cv::Mat temp;
-//            cap >> temp;
-//            // Turn OpenCV's Mat into something dlib can deal with.  Note that this just
-//            // wraps the Mat object, it doesn't copy anything.  So cimg is only valid as
-//            // long as temp is valid.  Also don't do anything to temp that would cause it
-//            // to reallocate the memory which stores the image as that will make cimg
-//            // contain dangling pointers.  This basically means you shouldn't modify temp
-//            // while using cimg.
-//            //line(temp, cv::Point( 15, 20 ), cv::Point( 70, 50), cv::Scalar( 110, 220, 0 ),  2, 8 );
-//            cv_image<bgr_pixel> cimg(temp);
-//            //line(temp, cv::Point( 25, 20 ), cv::Point( 80, 50), cv::Scalar( 110, 220, 0 ),  2, 8 );
-//
-//
-//            //win.clear_overlay();
-//            //win.set_image(cimg);
-//
-//            //  continue;
-//            //while (true);
-//
-//            // Detect faces
-//            std::vector<rectangle> faces = detector(cimg);
-//            //db(faces.size());
-//            //if (!faces.empty()) {
-//            //db2(faces[0].bottom(), faces[0].top());
-//            //db2(faces[0].left(), faces[0].right());
-//            //}
-//
-//            // Find the pose of each face.
-//            std::vector<full_object_detection> shapes;
-//            for (unsigned long i = 0; i < faces.size(); ++i)
-//                shapes.push_back(pose_model(cimg, faces[i]));
-//
-//
-//            ///48 ... 68 - lips
-//            // 60 ... 68 - inner part
-//            // 66 && 62 - up down;
-//            // 60 && 64 left right
-//
-//
-//            if (!shapes.empty()) {
-//                //db(shapes[0].num_parts());
-//                assert(shapes[0].num_parts() == 68);
-//                //for (int i = 48; i < shapes[0].num_parts(); i++)  {
-//                for (int i = 60; i < 68; i += 2) {
-//                    //if (i != 64 && i != 60 && ) continue;
-//                    point A = shapes[0].part(i);
-//                    //db2(A.x(), A.y());
-//                    circle(temp, cv::Point(A.x(), A.y()), 3,
-//                           cv::Scalar(0, 0, (int) (255 * i * 1.0 / shapes[0].num_parts())), cv::FILLED,
-//                           cv::LINE_AA);
-//                }
-//                double leftToRigth = (shapes[0].part(60) - shapes[0].part(64)).length();
-//                double upToDown = (shapes[0].part(62) - shapes[0].part(66)).length();
-//
-//                if (upToDown / leftToRigth > 0.15)
-//                    circle(temp, cv::Point(20, 20), 10, cv::Scalar(255, 0, 0), cv::FILLED, cv::LINE_AA);
-//            }
-//
-//            win.clear_overlay();
-//            win.set_image(cimg);
-//            win.add_overlay(render_face_detections(shapes));
-//        }
-//    }
-//    catch (serialization_error &e) {
-//        cout << "You need dlib's default face landmarking model file to run this example." << endl;
-//        cout << "You can get it from the following URL: " << endl;
-//        cout << "   http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2" << endl;
-//        cout << endl << e.what() << endl;
-//    }
-//    catch (exception &e) {
-//        cout << e.what() << endl;
-//    }
+
 }
 
