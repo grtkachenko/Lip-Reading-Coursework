@@ -4,7 +4,6 @@
 
 
 
-
 bool equal(double a, double b) {
     return abs(a - b) < 1e-9;
 }
@@ -19,10 +18,10 @@ bool lessE(double a, double b) {
 
 
 struct MyFrame {
-    double time;
+    double t;
     int id;
     Lips lips;
-    MyFrame(double time, int id, Lips lips): time(time), id(id), lips(lips) {}
+    MyFrame(double t, int id, Lips lips): t(t), id(id), lips(lips) {}
 };
 
 
@@ -104,7 +103,7 @@ void drawLips(cv::Mat & frame, Lips lips) {
         cv::line(frame, s.fr.getCVPoint(), s.sc.getCVPoint(), cv::Scalar(0, 0, 255)); 
 }
 
-void playVideo() {
+void readSubtitle() {
     assert(freopen("inception.srt", "r", stdin) != 0);
     string s;
     getline(cin, s);
@@ -120,13 +119,29 @@ void playVideo() {
         }
     }
     cerr << subtitles.getLen() << endl;
+}
 
+MyFrame prevFrame(0, -2, Lips());
+    
 
+void addToLearn(MyFrame curFrame) {
+    assert(prevFrame.id + 1 <= curFrame.id);
+    if (prevFrame.id + 1 == curFrame.id) {
+        
+
+    }
+    prevFrame = curFrame;
+}
+
+void playVideo() {
+    //readSubtitle();
+    
     cv::VideoCapture cap("inception.avi"); // open the default camera
 
     if (!cap.isOpened()) { // check if we succeeded
         assert(false);
     }
+
     int lastMinute = 3;
     cap.set(CV_CAP_PROP_POS_MSEC, 1000 * 60 * lastMinute);
 
@@ -136,7 +151,6 @@ void playVideo() {
     dlib::deserialize("shape_predictor_68_face_landmarks.dat") >> pose_model;
 
     dlib::image_window win;
-
 
     SegSet oneFace;
     std::vector < MyFrame > myFrame;
@@ -158,7 +172,6 @@ void playVideo() {
         // 66 && 62 - up down;
         // 60 && 64 left right
 
-        double tmr = cap.get(CV_CAP_PROP_POS_MSEC) / 1000.0;
 
         //cv::Point A(w - ww, 0);
         //cv::Point B(w - 1, hh);
@@ -173,10 +186,13 @@ void playVideo() {
                 pnt C = lips.back();
                 cv::circle(frame, cv::Point(C.x, C.y), 2, cv::Scalar(255, 0, 0), cv::FILLED, cv::LINE_AA);
             }
+            int frameId = cap.get(CV_CAP_PROP_POS_FRAMES);
+            double tmr = cap.get(CV_CAP_PROP_POS_MSEC) / 1000.0;
             Lips l(lips);
             l.normalize();
-            myFrame.push_back(MyFrame(tmr, it, l));
+            addToLearn(MyFrame(tmr, frameId, l));
             drawLips(frame, l);
+            //myFrame.push_back(MyFrame(tmr, it, l));
         }
         win.clear_overlay();
         win.set_image(cimg);
@@ -184,45 +200,47 @@ void playVideo() {
     }
 
 
-    for (int i = 0; i < (int)myFrame.size(); ) {
-        int j = i;
-        for (; i < (int)myFrame.size() && i - myFrame[i].id == j - myFrame[j].id; i++);
-        if (i - j > 1) {
-            oneFace.add(myFrame[j].time, myFrame[i - 1].time);
-        }
-    }
-
-    SegSet faceAndSub = oneFace & subtitles;
-    db(faceAndSub.getLen());
 
 
-    readAudioFeature();
+    //for (int i = 0; i < (int)myFrame.size(); ) {
+        //int j = i;
+        //for (; i < (int)myFrame.size() && i - myFrame[i].id == j - myFrame[j].id; i++);
+        //if (i - j > 1) {
+            //oneFace.add(myFrame[j].time, myFrame[i - 1].time);
+        //}
+    //}
 
-    std::vector < pair < std::vector < double >,  Lips > > dataForLearning;
-    int cur = 0;
-    int curMyFrame = 0;
-    for (int i = 0; i < (int)audioFeature.size(); i++) {
-        double tmr = audioFeature[i].first + winLen / 2;
-        for (; cur < (int)faceAndSub.data.size() && faceAndSub.data[cur].sc < tmr; cur++);
-        if (cur < (int)faceAndSub.data.size() && faceAndSub.data[cur].fr <= tmr && tmr <= faceAndSub.data[cur].sc) {
-            for (; curMyFrame < (int)myFrame.size() && less(myFrame[curMyFrame].time, tmr); curMyFrame++);
-            assert(curMyFrame < (int)myFrame.size());
-            auto & m1 = myFrame[curMyFrame - 1];
-            auto & m2 = myFrame[curMyFrame];
-            assert(m1.id + 1 == m2.id);
-            double len = m2.time - m1.time;
-            double l = tmr - m1.time;
-            double r = m2.time - tmr;
-            std::vector < pnt > lips;
-            auto lipsPrev = m1.lips.getData();
-            auto lipsNext = m2.lips.getData();
+    //SegSet faceAndSub = oneFace & subtitles;
+    //db(faceAndSub.getLen());
 
-            for (int j = 0; j < (int)lipsPrev.size(); j++)
-                lips.push_back((lipsPrev[j] * r + lipsNext[j] * l) / len);
-            dataForLearning.push_back(make_pair(audioFeature[i].second, Lips(lips)));
-        }
-    }
-    db(dataForLearning.size());
+
+    //readAudioFeature();
+
+    //std::vector < pair < std::vector < double >,  Lips > > dataForLearning;
+    //int cur = 0;
+    //int curMyFrame = 0;
+    //for (int i = 0; i < (int)audioFeature.size(); i++) {
+        //double tmr = audioFeature[i].first + winLen / 2;
+        //for (; cur < (int)faceAndSub.data.size() && faceAndSub.data[cur].sc < tmr; cur++);
+        //if (cur < (int)faceAndSub.data.size() && faceAndSub.data[cur].fr <= tmr && tmr <= faceAndSub.data[cur].sc) {
+            //for (; curMyFrame < (int)myFrame.size() && less(myFrame[curMyFrame].time, tmr); curMyFrame++);
+            //assert(curMyFrame < (int)myFrame.size());
+            //auto & m1 = myFrame[curMyFrame - 1];
+            //auto & m2 = myFrame[curMyFrame];
+            //assert(m1.id + 1 == m2.id);
+            //double len = m2.time - m1.time;
+            //double l = tmr - m1.time;
+            //double r = m2.time - tmr;
+            //std::vector < pnt > lips;
+            //auto lipsPrev = m1.lips.getData();
+            //auto lipsNext = m2.lips.getData();
+
+            //for (int j = 0; j < (int)lipsPrev.size(); j++)
+                //lips.push_back((lipsPrev[j] * r + lipsNext[j] * l) / len);
+            //dataForLearning.push_back(make_pair(audioFeature[i].second, Lips(lips)));
+        //}
+    //}
+    //db(dataForLearning.size());
 
 
 

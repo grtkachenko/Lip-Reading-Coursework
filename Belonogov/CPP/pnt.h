@@ -17,8 +17,10 @@ struct pnt {
     cv::Point getCVPoint();
 };
 
+
 struct Lips {
     std::vector < pnt > lips;
+    Lips ();
     Lips (std::vector < pnt > lips);
     void normalize();
     void setScale(double k);

@@ -36,6 +36,7 @@ cv::Point pnt::getCVPoint() {
 
 
 Lips::Lips(std::vector < pnt > lips): lips(lips) { }
+Lips::Lips() { }
 
 void Lips::normalize() {
     pnt Mid = (lips[0] + lips[6]) / 2;
