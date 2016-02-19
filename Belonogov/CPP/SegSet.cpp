@@ -6,7 +6,7 @@
 
 
 void SegSet::add(double l, double r) {
-    data.pb(mp(l, r));
+    data.pb(std::make_pair(l, r));
 }
 
 void SegSet::check() {
@@ -17,14 +17,14 @@ void SegSet::check() {
 }
 
 SegSet SegSet::operator|(const SegSet &other) const {
-    vector<pair<double, int> > event;
+    std::vector<std::pair<double, int> > event;
     for (auto x: data) {
-        event.pb(mp(x.fr, 1));
-        event.pb(mp(x.sc, -1));
+        event.pb(std::make_pair(x.fr, 1));
+        event.pb(std::make_pair(x.sc, -1));
     }
     for (auto x: other.data) {
-        event.pb(mp(x.fr, 1));
-        event.pb(mp(x.sc, -1));
+        event.pb(std::make_pair(x.fr, 1));
+        event.pb(std::make_pair(x.sc, -1));
     }
     sort(event.begin(), event.end());
     int cnt = 0;
@@ -44,14 +44,14 @@ SegSet SegSet::operator|(const SegSet &other) const {
 }
 
 SegSet SegSet::operator&(const SegSet &other) const {
-    vector<pair<double, int> > event;
+    std::vector<std::pair<double, int> > event;
     for (auto x: data) {
-        event.pb(mp(x.fr, 1));
-        event.pb(mp(x.sc, -1));
+        event.pb(std::make_pair(x.fr, 1));
+        event.pb(std::make_pair(x.sc, -1));
     }
     for (auto x: other.data) {
-        event.pb(mp(x.fr, 1));
-        event.pb(mp(x.sc, -1));
+        event.pb(std::make_pair(x.fr, 1));
+        event.pb(std::make_pair(x.sc, -1));
     }
     sort(event.begin(), event.end());
     int cnt = 0;
@@ -83,14 +83,14 @@ SegSet SegSet::operator~() const {
 }
 
 void SegSet::print() {
-    cerr.precision(8);
-    cerr << fixed;
+    std::cerr.precision(8);
+    std::cerr << std::fixed;
     for (int i = 0; i < (int) data.size(); i++) {
-        cerr << "[" << data[i].fr << ", " << data[i].sc << "]";
+        std::cerr << "[" << data[i].fr << ", " << data[i].sc << "]";
         if (i + 1 == (int) data.size())
-            cerr << endl;
+            std::cerr << std::endl;
         else
-            cerr << ", ";
+            std::cerr << ", ";
     }
 }
 

@@ -1,3 +1,4 @@
+#undef NDEBUG
 #include <iostream>
 #include <cmath>
 #include <vector>
@@ -25,15 +26,21 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include "opencv2/opencv.hpp"
+#include <dlib/svm.h>
 
 #ifndef MAIN_H
 #define MAIN_H
 
+using namespace std;
 
 #define db(x) cerr << #x << " = " << x << endl
 #define db2(x, y) cerr << "(" << #x << ", " << #y << ") = (" << x << ", " << y << ")\n"
 #define equal equall
 #define less lesss
+#define fr first
+#define sc second
+#define mp make_pair
+#define pb push_back
 
 
 bool equal(double a, double b);

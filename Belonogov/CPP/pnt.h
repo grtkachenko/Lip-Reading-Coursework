@@ -3,6 +3,8 @@
 #ifndef PNT_H
 #define PNT_H
 
+using namespace std;
+
 struct pnt {
     double x, y;
     pnt (); 
@@ -25,8 +27,17 @@ struct Lips {
     void normalize();
     void setScale(double k);
     void shift(pnt v);
-    std::vector < std::pair < pnt, pnt > > getContour ();
-    std::vector < pnt > getData();
+    vector < std::pair < pnt, pnt > > getContour ();
+    vector < pnt > data();
+    double getDist(Lips other);
+};
+
+struct Average {
+    double sum;
+    int cnt;
+    Average();
+    void add(double x);
+    double average();
 };
 
 #endif

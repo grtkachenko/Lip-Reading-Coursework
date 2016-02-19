@@ -1,15 +1,18 @@
 *.dat
 *.wav
 *.mp3
+*.mp4
 *.srt
 *.avi
 *.swp
+*.out
 dlib/
 Belonogov/python/*.txt
 Belonogov/CPP/CMakeFiles
 Belonogov/CPP/dlib_build
 Belonogov/CPP/bin
-
+Belonogov/CPP/audio_feat.txt
+Belonogov/CPP/*feature.txt
 
 
 # Compiled source #

@@ -54,7 +54,8 @@ void Lips::normalize() {
 
 void Lips::setScale(double k) {
     double oldValue = (lips[0] - lips[6]).len() / 2;
-    assert(equal(oldValue, 1));
+    //db(oldValue);
+    //assert(equal(oldValue, 1));
     k = k / oldValue;
     for (auto &p: lips)
         p = p * k;
@@ -77,7 +78,27 @@ std::vector < std::pair < pnt, pnt > > Lips::getContour() {
     return result;
 }
 
-std::vector < pnt > Lips::getData() {
+std::vector < pnt > Lips::data() {
     return lips;
 }
+
+double Lips::getDist(Lips l) {
+    double sum = 0;
+    auto other = l.data(); 
+    for (int i = 0; i < (int)lips.size(); i++)
+        sum += (lips[i] - other[i]).len(); 
+    return sum;
+}
+
+Average::Average(): sum(0), cnt(0) { }
+void Average::add(double x) {
+    cnt++;
+    sum += x;
+}
+
+double Average::average() {
+    assert(cnt != 0);
+    return sum / cnt;
+}
+
 

@@ -2,13 +2,13 @@ from features import mfcc
 from features import logfbank
 import scipy.io.wavfile as wav
 
-(rate,sig) = wav.read("full_inception_mono_240.wav")
+(rate,sig) = wav.read("psychology.wav")
 
 #mfcc_feat = mfcc(sig,rate);
 
 winstep = 0.01 
 winlen = 0.025
-mfcc_feat = mfcc(sig,rate, winlen, winstep)
+#mfcc_feat = mfcc(sig,rate, winlen, winstep)
 fbank_feat = logfbank(sig,rate, winlen, winstep)
 #print type(fbank_feat)
 #print type(mfcc_feat)
@@ -33,7 +33,12 @@ fo = open("audio_feat.txt", "w")
 fo.write(' '.join(map(str, (n, m, winstep, winlen))) + "\n");
 #fo.write(str(n) + " " + str(m) + " ", "\n");
 for i in range(0, n):
-    fo.write(str(winstep * i) + ": " + ' '.join(map(str, fbank_feat[i])) + "\n")
+    res = str(winstep * i) + ": ";
+    for j in range(0, m):
+        res = res + " %.3lf " % fbank_feat[i][j]
+    #+ ' '.join(map(str, fbank_feat[i])) + "\n")
+    res += "\n";
+    fo.write(res)
 
 
 

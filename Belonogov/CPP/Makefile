@@ -127,30 +127,6 @@ dlib/fast:
 	$(MAKE) -f dlib_build/CMakeFiles/dlib.dir/build.make dlib_build/CMakeFiles/dlib.dir/build
 .PHONY : dlib/fast
 
-SegSet.o: SegSet.cpp.o
-.PHONY : SegSet.o
-
-# target to build an object file
-SegSet.cpp.o:
-	$(MAKE) -f CMakeFiles/CPP.dir/build.make CMakeFiles/CPP.dir/SegSet.cpp.o
-.PHONY : SegSet.cpp.o
-
-SegSet.i: SegSet.cpp.i
-.PHONY : SegSet.i
-
-# target to preprocess a source file
-SegSet.cpp.i:
-	$(MAKE) -f CMakeFiles/CPP.dir/build.make CMakeFiles/CPP.dir/SegSet.cpp.i
-.PHONY : SegSet.cpp.i
-
-SegSet.s: SegSet.cpp.s
-.PHONY : SegSet.s
-
-# target to generate assembly for a file
-SegSet.cpp.s:
-	$(MAKE) -f CMakeFiles/CPP.dir/build.make CMakeFiles/CPP.dir/SegSet.cpp.s
-.PHONY : SegSet.cpp.s
-
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -209,9 +185,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... CPP"
 	@echo "... dlib"
-	@echo "... SegSet.o"
-	@echo "... SegSet.i"
-	@echo "... SegSet.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
