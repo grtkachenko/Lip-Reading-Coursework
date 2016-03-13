@@ -17,6 +17,7 @@ struct pnt {
     double len();
     pnt rotate(double ang); 
     cv::Point getCVPoint();
+    void Epr();
 };
 
 
@@ -26,10 +27,12 @@ struct Lips {
     Lips (std::vector < pnt > lips);
     void normalize();
     void setScale(double k);
+    double getScale();
     void shift(pnt v);
     vector < std::pair < pnt, pnt > > getContour ();
     vector < pnt > data();
-    double getDist(Lips other);
+    void print();
+//    double getDist(Lips other);
 };
 
 struct Average {
@@ -39,6 +42,8 @@ struct Average {
     void add(double x);
     double average();
 };
+
+double lipsDist(Lips l1, Lips l2);
 
 #endif
 

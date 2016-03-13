@@ -34,6 +34,9 @@ cv::Point pnt::getCVPoint() {
     return cv::Point(x, y);
 }
 
+void pnt::Epr() {
+    cerr << "x y: " << x << " " << y << endl;
+}
 
 Lips::Lips(std::vector < pnt > lips): lips(lips) { }
 Lips::Lips() { }
@@ -61,9 +64,19 @@ void Lips::setScale(double k) {
         p = p * k;
 }
 
+double Lips::getScale() {
+    return (lips[0] - lips[6]).len() / 2;
+};
+
 void Lips::shift(pnt v) {
     for (auto &p: lips)
         p = p + v;
+}
+
+void Lips::print() {
+    for (auto p: lips)
+        cerr << "(" << p.x << ", " << p.y << ")  ";
+    cerr << endl;
 }
 
 std::vector < std::pair < pnt, pnt > > Lips::getContour() {
@@ -82,11 +95,14 @@ std::vector < pnt > Lips::data() {
     return lips;
 }
 
-double Lips::getDist(Lips l) {
+double lipsDist(Lips l1, Lips l2) {
+    //db2(l1.getScale(), l2.getScale());
+
+    l1.setScale(1);
+    l2.setScale(1);
     double sum = 0;
-    auto other = l.data(); 
-    for (int i = 0; i < (int)lips.size(); i++)
-        sum += (lips[i] - other[i]).len(); 
+    for (int i = 0; i < (int)l1.lips.size(); i++)
+        sum += (l1.lips[i] - l2.lips[i]).len();
     return sum;
 }
 
