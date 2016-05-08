@@ -10,6 +10,91 @@
     </content>
     <content url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib">
       <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/add_global_compiler_switch.cmake" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libpng/png.h" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libpng/pngread.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libpng/pngrutil.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libpng/pngtrans.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libpng/pngwrite.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libpng/pngrtran.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libpng/pngmem.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libpng/pngset.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libpng/pngwutil.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libpng/pngpread.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libpng/pngwio.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libpng/pngerror.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libpng/png.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libpng/pngrio.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libpng/pngwtran.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libpng/pngget.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/deflate.h" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/infback.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/deflate.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/crc32.h" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/gzlib.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/inffast.h" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/gzread.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/crc32.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/inffast.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/adler32.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/uncompr.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/trees.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/trees.h" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/zutil.h" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/inflate.h" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/zutil.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/gzwrite.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/inflate.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/inftrees.h" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/gzclose.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/compress.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/zlib/inftrees.c" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jidctfst.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jquant1.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jchuff.h" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jdmainct.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jerror.h" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jcinit.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jdcolor.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jcphuff.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jdmarker.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jcparam.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jdmerge.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jidctflt.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jdhuff.h" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jcsample.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jchuff.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jdapistd.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jcmainct.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jutils.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jdcoefct.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jdhuff.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jccolor.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jdpostct.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jcmaster.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jerror.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jmemnobs.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jccoefct.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jcomapi.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jidctred.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jcdctmgr.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jmemmgr.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jcapimin.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jdapimin.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jquant2.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jdatadst.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jdsample.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jdinput.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jdatasrc.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jfdctfst.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jcmarker.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jidctint.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jfdctint.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jdmaster.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jcprepct.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jdphuff.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jcapistd.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jddctmgr.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/external/libjpeg/jfdctflt.cpp" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/entropy_decoder/entropy_decoder_kernel_1.cpp" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/entropy_decoder/entropy_decoder_kernel_2.h" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/entropy_decoder/entropy_decoder_kernel_2.cpp" isTestSource="false" />
@@ -87,16 +172,16 @@
       <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/server/server_iostream.cpp" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/server/server_kernel.cpp" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/threads/threads_kernel_1.cpp" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/threads/threaded_object_extension.cpp" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/threads/thread_pool_extension.cpp" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/threads/multithreaded_object_extension.h" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/threads/threads_kernel_shared.h" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/threads/threaded_object_extension.h" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/threads/threads_kernel_2.cpp" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/threads/threads_kernel_1.h" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/threads/threads_kernel_shared.cpp" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/threads/thread_pool_extension.h" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/threads/threaded_object_extension.cpp" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/threads/threads_kernel_2.h" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/threads/thread_pool_extension.cpp" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/threads/threaded_object_extension.h" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/threads/threads_kernel_shared.h" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/threads/multithreaded_object_extension.cpp" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/dir_nav/dir_nav_kernel_1.h" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/soft/lib/dlib-18.18/dlib/dir_nav/dir_nav_kernel_1.cpp" isTestSource="false" />
@@ -119,16 +204,20 @@
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
-          <root url="file:///usr/include" />
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+          <root url="file:///usr/include" />
           <root url="file:///usr/local/include" />
           <root url="file://$USER_HOME$/soft/lib/dlib-18.18" />
         </CLASSES>
         <SOURCES>
-          <root url="file:///usr/include" />
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+          <root url="file:///usr/include" />
           <root url="file:///usr/local/include" />
           <root url="file://$USER_HOME$/soft/lib/dlib-18.18" />
         </SOURCES>

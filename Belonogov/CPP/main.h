@@ -27,6 +27,8 @@
 #include <opencv2/imgproc.hpp>
 #include "opencv2/opencv.hpp"
 #include <dlib/svm.h>
+#include <dlib/statistics.h>
+
 
 #ifndef MAIN_H
 #define MAIN_H

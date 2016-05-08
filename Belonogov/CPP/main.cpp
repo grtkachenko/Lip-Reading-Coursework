@@ -1,9 +1,10 @@
 #include "pnt.h"
 #include "main.h"
+const string pathToPython = "/home/vanya/Documents/LR/4/Lip-Reading-Coursework/Belonogov/python/";
 
-const string filmFile = "psychology.mp4";
+const string filmFile = pathToPython + "psychology.mp4";
 //const string featureFile = "psychology_f.txt";
-const string featureFile = "psychology_feature.txt";
+const string featureFile = pathToPython + "audio_feat.txt";
 
 bool equal(double a, double b) {
     return abs(a - b) < 1e-9;
@@ -31,7 +32,6 @@ typedef dlib::matrix<double, AUDIO_FEATURE_SIZE, 1> sample_type;
 typedef dlib::radial_basis_kernel<sample_type> kernel_type;
 
 struct Player {
-
 //
 //void test() {
 //    using namespace cv;
@@ -72,7 +72,9 @@ struct Player {
 
     void readAudioFeature() {
         FILE *feature = fopen(featureFile.data(), "r");
+        assert(feature != NULL);
         assert(fscanf(feature, "%d%d%lf%lf", &n, &m, &winStep, &winLen) == 4);
+        db2(winStep, winLen);
         //assert(false);
         //db2(n, m);
         for (int i = 0; i < n; i++) {
@@ -83,6 +85,21 @@ struct Player {
                 assert(fscanf(feature, "%lf", &featureVector[j]) == 1);
             audioFeature.push_back(make_pair(tmr, featureVector));
         }
+        typedef dlib::matrix < double, 0, 1 > MType;
+
+        dlib::vector_normalizer_pca < MType > normalizer;
+
+        vector < MType > data(n);
+        for (int i = 0; i < n; i++) {
+            data[i].set_size(m);
+            for (int j = 0; j < m; j++)
+                data[i](j) = audioFeature[i].sc[j];
+        }
+
+        db2(normalizer.in_vector_size(), normalizer.out_vector_size());
+        normalizer.train(data);
+        db2(normalizer.in_vector_size(), normalizer.out_vector_size());
+
         //db(audioFeature.size());
         //db("success read");
     }
@@ -217,7 +234,7 @@ struct Player {
         dlib::frontal_face_detector detector = dlib::get_frontal_face_detector();
         dlib::shape_predictor pose_model;
         dlib::deserialize("shape_predictor_68_face_landmarks.dat") >> pose_model;
-        dlib::image_window win;
+//        dlib::image_window win;
 
         std::vector<MyFrame> myFrame;
         Lips sumLips(vector<pnt>(LIPS_SIZE, pnt(0, 0)));
@@ -225,7 +242,7 @@ struct Player {
 
 //    Lips l100;
         int ITER = 500;
-        for (int it = 0; it < ITER; it++) { // TODO change restriction
+        for (int it = 0; it < ITER; it++) {
             cv::Mat frame;
             cap >> frame; // get a new frame from camera
             //double curTime = cap.get(CV_CAP_PROP_POS_MSEC);
@@ -287,26 +304,26 @@ struct Player {
                 drawLips(frame, l2, 2); // mean lips
                 double dist02 = lipsDist(l2, l);
                 d2.add(dist02);
-                cerr << endl;
-                if (it * 2 == ITER)
-                    cerr << "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
+//                cerr << endl;
+                //if (it * 2 == ITER)
+                    //cerr << "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
 
                 if (it < ITER / 2)
                     addToLearn(MyFrame(tmr, frameId, l));
                 else {
                     d3.add(dd);
                 }
-                if (it < ITER / 2)
-                    cerr << fixed << "\tit: " << it << "    av  dist 0-1  0-2 : " << d1.average() << " " <<
-                    d2.average() << "      cur 0-1 0-2    " << dd << " " << dist02 << endl;
-                else
-                    cerr << fixed << "\tit: " << it << "    av  dist 0-1  0-2 : " << d3.average() << " " <<
-                    d2.average() << "      cur 0-1 0-2    " << dd << " " << dist02 << endl;
+//                if (it < ITER / 2)
+//                    cerr << fixed << "\tit: " << it << "    av  dist 0-1  0-2 : " << d1.average() << " " <<
+//                    d2.average() << "      cur 0-1 0-2    " << dd << " " << dist02 << endl;
+//                else
+//                    cerr << fixed << "\tit: " << it << "    av  dist 0-1  0-2 : " << d3.average() << " " <<
+//                    d2.average() << "      cur 0-1 0-2    " << dd << " " << dist02 << endl;
 
             }
-            win.clear_overlay();
-            win.set_image(cimg);
-            win.add_overlay(render_face_detections(shapes));
+//            win.clear_overlay();
+//            win.set_image(cimg);
+//            win.add_overlay(render_face_detections(shapes));
         }
         return d3.average();
     }
@@ -328,19 +345,18 @@ int main(int argc, char * argv[]) {
     else
         assert(false);
     //db2(alf, beta);
-    FILE * config = fopen("config.txt", "r");
-    int vectorCnt;
-    assert(fscanf(config, "%d", &vectorCnt) == 1);
-    vector < pair < int, double > > answers;
-    for (int i = 2; i < 20; i++) {
-        Player player;
-        player.lipsPredictor.assign(LIPS_SIZE * 2, dlib::krls<kernel_type>(kernel_type(alf), beta, i));
-        double res = player.playVideo();
-        answers.pb(mp(i, res));
-        printf("%lf\n", res);
-    }
-    for (auto x: answers)
-        db2(x.fr, x.sc);
+//    FILE * config = fopen("config.txt", "r");
+//    int vectorCnt;
+//    assert(fscanf(config, "%d", &vectorCnt) == 1);
+//    vector < pair < int, double > > answers;
+//    for (int i = 2; i < 20; i++) {
+    Player player;
+    player.lipsPredictor.assign(LIPS_SIZE * 2, dlib::krls<kernel_type>(kernel_type(alf), beta, 20));
+    double res = player.playVideo();
+//    answers.pb(mp(i, res));
+    printf("%lf\n", res); //    }
+//    for (auto x: answers)
+//        db2(x.fr, x.sc);
     return 0;
 }
 
