@@ -2,7 +2,7 @@ from features import mfcc
 from features import logfbank
 import scipy.io.wavfile as wav
 
-(rate,sig) = wav.read("psychology.wav")
+(rate,sig) = wav.read("psychology_short.wav")
 
 #mfcc_feat = mfcc(sig,rate);
 
@@ -28,7 +28,7 @@ m = fbank_feat.shape[1]
 #print "Opening mode : ", fo.mode
 #print "Softspace flag : ", fo.softspace
 
-fo = open("audio_feat.txt", "w")
+fo = open("audio_feat_short.txt", "w")
 
 fo.write(' '.join(map(str, (n, m, winstep, winlen))) + "\n");
 #fo.write(str(n) + " " + str(m) + " ", "\n");
